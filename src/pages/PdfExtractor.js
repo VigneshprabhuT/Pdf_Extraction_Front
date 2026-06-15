@@ -45,15 +45,17 @@ function PdfExtractor() {
     }
 
     const formData = new FormData();
-    files.forEach((file) => formData.append("files", file));
+    
     formData.append("extraction_type", extractionType);
     formData.append("start_page", Number(startPage));
     formData.append("end_page", Number(endPage));
 
+    files.forEach((file) => formData.append("files", file));
+
     setLoading(true);
     setProgress(0);
     setTableData([]);
-    setError(null);
+    setError("");
 
     const xhr = new XMLHttpRequest();
 
@@ -64,44 +66,53 @@ function PdfExtractor() {
       }
     };
 
-    const responsePromise = new Promise((resolve, reject) => {
-      xhr.open("POST", "http://127.0.0.1:8000/api/extract/");
-      xhr.onload = () => {
-        if (xhr.status >= 200 && xhr.status < 300) {
-          try {
-            const parsed = JSON.parse(xhr.responseText);
-            resolve(parsed);
-          } catch (e) {
-            reject(new Error("Invalid JSON response from server"));
-          }
-        } else {
-          reject(new Error(`Server error: ${xhr.status}`));
-        }
-      };
-      xhr.onerror = () => reject(new Error("Network error – could not reach the server"));
-      xhr.send(formData);
-    });
-
     try {
-      const response = await responsePromise;
-      // Extract table data only – do NOT store full JSON
+      const response = await new Promise((resolve, reject) => {
+        xhr.open(
+          "POST",
+          "http://127.0.0.1:8000/api/extract/"
+        );
+
+        xhr.onload = () => {
+          if (
+            xhr.status >= 200 &&
+            xhr.status < 300
+          ) {
+            resolve(JSON.parse(xhr.responseText));
+          } else {
+            reject(
+              new Error(
+                `Server Error ${xhr.status}`
+              )
+            );
+          }
+        };
+
+        xhr.onerror = () => {
+          reject(new Error("Network Error"));
+        };
+
+        xhr.send(formData);
+      });
+
+      console.log(response);
+
       if (
         response.results &&
-        response.results.length > 0 &&
-        response.results[0].status?.data
+        response.results.length > 0
       ) {
-        setTableData(response.results[0].status.data);
-      } else {
-        setTableData([]);
+        setTableData(
+          response.results[0].table_data || []
+        );
       }
     } catch (err) {
+      setError(err.message);
       console.error(err);
-      setError(err.message || "Extraction failed. Please try again.");
     } finally {
       setLoading(false);
       setProgress(0);
     }
-  };
+  }
 
   return (
     <div className="pe-app">
