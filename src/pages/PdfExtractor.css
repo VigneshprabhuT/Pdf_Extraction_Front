@@ -1,0 +1,267 @@
+/* ========== LAYOUT ========== */
+.pe-app {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+.pe-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1e293b;
+}
+
+.pe-two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .pe-two-columns {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* ========== LEFT COLUMN STYLES (unchanged from original) ========== */
+.pe-dropzone {
+  border: 2px dashed #cbd5e1;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #f8fafc;
+  margin-bottom: 1.5rem;
+}
+
+.pe-dropzone--active {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+}
+
+.pe-dropzone__icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.pe-dropzone__text {
+  margin: 0;
+  font-weight: 500;
+  color: #334155;
+}
+
+.pe-dropzone__hint {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.pe-file-list {
+  background: #f1f5f9;
+  border-radius: 0.75rem;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.pe-file-list__header {
+  background: #e2e8f0;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #0f172a;
+}
+
+.pe-file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.pe-file-item:last-child {
+  border-bottom: none;
+}
+
+.pe-file-item__name {
+  font-size: 0.875rem;
+  color: #1e293b;
+}
+
+.pe-file-item__remove {
+  background: none;
+  border: none;
+  font-size: 1.125rem;
+  cursor: pointer;
+  color: #ef4444;
+  transition: transform 0.1s;
+}
+
+.pe-file-item__remove:hover {
+  transform: scale(1.1);
+}
+
+.pe-form-group {
+  margin-bottom: 1rem;
+}
+
+.pe-label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  color: #0f172a;
+}
+
+.pe-select,
+.pe-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  background: white;
+  font-size: 0.875rem;
+}
+
+.pe-page-range {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.pe-page-range .pe-form-group {
+  flex: 1;
+}
+
+.pe-error {
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.pe-progress-wrap {
+  margin-bottom: 1rem;
+}
+
+.pe-progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #475569;
+  margin-bottom: 0.25rem;
+}
+
+.pe-progress-track {
+  background: #e2e8f0;
+  border-radius: 9999px;
+  height: 0.5rem;
+  overflow: hidden;
+}
+
+.pe-progress-bar {
+  background: #3b82f6;
+  height: 100%;
+  width: 0%;
+  transition: width 0.2s;
+}
+
+.pe-btn {
+  background: #3b82f6;
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  width: 100%;
+  font-size: 0.875rem;
+  transition: background 0.2s;
+}
+
+.pe-btn:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.pe-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ========== RIGHT COLUMN STYLES ========== */
+.pe-right {
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.pe-result {
+  margin-bottom: 1.5rem;
+}
+
+.pe-result__header {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: #0f172a;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.25rem;
+}
+
+.pe-result__body {
+  background: #f8fafc;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  font-size: 0.75rem;
+  font-family: 'Menlo', monospace;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.table-container {
+  margin-top: 1rem;
+}
+
+.pe-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+  background: white;
+  border-radius: 0.5rem;
+  overflow: auto;
+  display: block;
+}
+
+.pe-data-table th,
+.pe-data-table td {
+  border: 1px solid #e2e8f0;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.pe-data-table th {
+  background: #f1f5f9;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+}
+
+.pe-placeholder {
+  text-align: center;
+  color: #94a3b8;
+  padding: 3rem 1rem;
+  font-style: italic;
+}
