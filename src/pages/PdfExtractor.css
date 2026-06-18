@@ -18,6 +18,11 @@
   gap: 2rem;
   align-items: start;
 }
+/* .pe-two-columns {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+} */
 
 @media (max-width: 900px) {
   .pe-two-columns {
@@ -108,29 +113,52 @@
 }
 
 .pe-form-group {
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
 }
 
 .pe-label {
-  display: block;
-  font-weight: 500;
-  margin-bottom: 0.25rem;
-  color: #0f172a;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
 }
 
 .pe-select,
 .pe-input {
   width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 0.5rem;
-  background: white;
-  font-size: 0.875rem;
+  padding: 12px 14px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #111827;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+* Hover */
+.pe-input:hover {
+  border-color: #9ca3af;
+}
+
+/* Focus */
+.pe-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Placeholder */
+.pe-input::placeholder {
+  color: #9ca3af;
 }
 
 .pe-page-range {
   display: flex;
-  gap: 1rem;
+  gap: 16px;
   margin-bottom: 1rem;
 }
 
@@ -194,6 +222,56 @@
   opacity: 0.6;
   cursor: not-allowed;
 }
+/* Upload & Extract Button */
+.Upload_Extract_Button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 12px;
+}
+
+.Upload_Extract_Button:hover:not(:disabled) {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+.Upload_Extract_Button:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+
+/* Export Button */
+.Export_Button {
+  background-color: #16a34a;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.Export_Button:hover {
+  background-color: #15803d;
+  transform: translateY(-2px);
+}
+
+
+/* Optional: Put buttons in one row */
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
 
 /* ========== RIGHT COLUMN STYLES ========== */
 .pe-right {
@@ -207,6 +285,7 @@
 
 .pe-result {
   margin-bottom: 1.5rem;
+  
 }
 
 .pe-result__header {
@@ -233,6 +312,11 @@
 
 .table-container {
   margin-top: 1rem;
+  /* width: 100%; */
+  overflow-x: auto; 
+  overflow-y: auto;  
+  max-height: 500px;  /* Adjust height as needed */
+  /* border: 1px solid #ddd; */
 }
 
 .pe-data-table {

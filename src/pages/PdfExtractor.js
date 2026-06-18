@@ -5,11 +5,12 @@ import "./PdfExtractor.css";
 function PdfExtractor() {
   const [files, setFiles] = useState([]);
   const [extractionType, setExtractionType] = useState("");
-  const [startPage, setStartPage] = useState(1);
-  const [endPage, setEndPage] = useState(5);
+  const [startPage, setStartPage] = useState("");
+  const [endPage, setEndPage] = useState("");
   const [loading, setLoading] = useState(false);
   const [progress, setProgress] = useState(0);
   const [tableData, setTableData] = useState([]);
+  const [excelUrl, setExcelUrl] = useState("");
   const [error, setError] = useState(null);
 
   const onDrop = (acceptedFiles) => {
@@ -39,7 +40,12 @@ function PdfExtractor() {
       setError("Please select an extraction type.");
       return;
     }
-    if (Number(startPage) < 1 || Number(endPage) < Number(startPage)) {
+    if (!startPage || !endPage) {
+      setError("Please enter start page and end page.");
+      return;
+    }
+
+    if (Number(endPage) < Number(startPage)) {
       setError("End page must be greater than or equal to start page.");
       return;
     }
@@ -55,6 +61,7 @@ function PdfExtractor() {
     setLoading(true);
     setProgress(0);
     setTableData([]);
+    setExcelUrl("");
     setError("");
 
     const xhr = new XMLHttpRequest();
@@ -68,10 +75,17 @@ function PdfExtractor() {
 
     try {
       const response = await new Promise((resolve, reject) => {
-        xhr.open(
-          "POST",
-          "http://127.0.0.1:8000/api/extract/"
-        );
+
+      let apiurl = "http://127.0.0.1:8000/api/extract/";
+
+        if (extractionType === "one_participant"){
+          apiurl="http://127.0.0.1:8000/api/extract/"
+        }
+        if (extractionType === "census"){
+          apiurl="http://127.0.0.1:8000/api/extract/census/"
+          console.log("Selected Type:", extractionType);
+        }
+        xhr.open("POST",apiurl);
 
         xhr.onload = () => {
           if (
@@ -97,14 +111,13 @@ function PdfExtractor() {
 
       console.log(response);
 
-      if (
-        response.results &&
-        response.results.length > 0
-      ) {
-        setTableData(
-          response.results[0].table_data || []
-        );
-      }
+      if (response.results?.length > 0) {
+      const result = response.results[0];
+
+      setTableData(result.table_data || []);
+      setExcelUrl(result.excel_url || "");
+    }
+
     } catch (err) {
       setError(err.message);
       console.error(err);
@@ -112,7 +125,19 @@ function PdfExtractor() {
       setLoading(false);
       setProgress(0);
     }
+     
   }
+  // 👉 MANUAL DOWNLOAD FUNCTION
+    const handleExportExcel = () => {
+      if (!excelUrl) return;
+
+      const link = document.createElement("a");
+      link.href = excelUrl;
+      link.download = excelUrl.split("/").pop();
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    };
 
   return (
     <div className="pe-app">
@@ -181,8 +206,9 @@ function PdfExtractor() {
                 className="pe-input"
                 type="number"
                 min="1"
+                placeholder="Enter start page No"
                 value={startPage}
-                onChange={(e) => setStartPage(Number(e.target.value))}
+                onChange={(e) => setStartPage(e.target.value)}
               />
             </div>
             <div className="pe-form-group">
@@ -191,8 +217,9 @@ function PdfExtractor() {
                 className="pe-input"
                 type="number"
                 min="1"
+                placeholder="Enter End page No"
                 value={endPage}
-                onChange={(e) => setEndPage(Number(e.target.value))}
+                onChange={(e) => setEndPage(e.target.value)}
               />
             </div>
           </div>
@@ -216,14 +243,25 @@ function PdfExtractor() {
             </div>
           )}
 
-          {/* Submit */}
           <button
-            className="pe-btn"
             onClick={handleUpload}
             disabled={loading}
+            className="Upload_Extract_Button"
           >
-            {loading ? "Processing..." : "Upload & extract"}
+            {loading
+              ? `Processing ${progress}%`
+              : "Upload & Extract"}
           </button>
+
+          {/* ✅ EXPORT BUTTON */}
+          {excelUrl && (
+            <button
+              onClick={handleExportExcel}
+              className="Export_Button"
+            >
+              Export to Excel
+            </button>
+          )}
         </div>
 
         {/* RIGHT COLUMN – Only the extracted table (no JSON) */}
