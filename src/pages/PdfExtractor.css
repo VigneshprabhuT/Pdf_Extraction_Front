@@ -140,7 +140,7 @@
   box-sizing: border-box;
 }
 
-* Hover */
+/* Hover */
 .pe-input:hover {
   border-color: #9ca3af;
 }
