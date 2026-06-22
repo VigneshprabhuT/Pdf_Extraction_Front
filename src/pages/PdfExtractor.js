@@ -78,12 +78,12 @@ function PdfExtractor() {
 
       let apiurl = "http://127.0.0.1:8000/api/extract/";
 
-        if (extractionType === "one_participant"){
-          apiurl="http://127.0.0.1:8000/api/extract/"
-        }
-        if (extractionType === "census"){
-          apiurl="http://127.0.0.1:8000/api/extract/census/"
-          console.log("Selected Type:", extractionType);
+        if (extractionType === "one_participant") {
+          apiurl = "http://127.0.0.1:8000/api/extract/";
+        } else if (extractionType === "census") {
+          apiurl = "http://127.0.0.1:8000/api/extract/census/";
+        } else if (extractionType === "four_participant") {
+          apiurl = "http://127.0.0.1:8000/api/extract/Four/";
         }
         xhr.open("POST",apiurl);
 
@@ -116,6 +116,7 @@ function PdfExtractor() {
 
       setTableData(result.table_data || []);
       setExcelUrl(result.excel_url || "");
+      // setFiles([]);
     }
 
     } catch (err) {
@@ -124,7 +125,7 @@ function PdfExtractor() {
     } finally {
       setLoading(false);
       setProgress(0);
-    }
+    };
      
   }
   // 👉 MANUAL DOWNLOAD FUNCTION
