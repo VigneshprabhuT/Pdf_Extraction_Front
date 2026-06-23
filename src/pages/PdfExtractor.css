@@ -125,6 +125,55 @@
   color: #374151;
   margin-bottom: 6px;
 }
+.file-actions{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+}
+
+.preview-btn{
+    border:none;
+    background:none;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.preview-modal{
+    position:fixed;
+    top:0;
+    left:0;
+    width:50%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.preview-content{
+    width:90%;
+    height:90%;
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.preview-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 20px;
+    border-bottom:1px solid #ddd;
+}
+
+.close-btn{
+    border:none;
+    background:none;
+    font-size:22px;
+    cursor:pointer;
+}
 
 .pe-select,
 .pe-input {
@@ -274,6 +323,20 @@
 }
 
 /* ========== RIGHT COLUMN STYLES ========== */
+.dashboard-cards{
+  display:flex;
+  gap:15px;
+  margin-bottom:20px;
+}
+
+.dashboard-card{
+  flex:1;
+  padding:15px;
+  border-radius:10px;
+  background:#fff;
+  box-shadow:0 2px 8px rgba(0,0,0,.1);
+  text-align:center;
+}
 .pe-right {
   background: #ffffff;
   border-radius: 1rem;

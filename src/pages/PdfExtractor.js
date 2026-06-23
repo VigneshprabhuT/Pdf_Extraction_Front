@@ -12,11 +12,25 @@ function PdfExtractor() {
   const [tableData, setTableData] = useState([]);
   const [excelUrl, setExcelUrl] = useState("");
   const [error, setError] = useState(null);
+  const [previewUrl, setPreviewUrl] = useState(null);
+  const [showPreview, setShowPreview] = useState(false);
+  const [dashboard, setDashboard] = useState({
+    totalFiles: 0,
+    totalRows: 0,
+    successFiles: 0
+  });
 
   const onDrop = (acceptedFiles) => {
     setFiles((prev) => {
       const existing = new Set(prev.map((f) => f.name));
-      const newFiles = acceptedFiles.filter((f) => !existing.has(f.name));
+      const newFiles = acceptedFiles.filter(
+        (f) => !existing.has(f.name)
+      );
+
+      if (newFiles.length > 0) {
+        setPreviewUrl(URL.createObjectURL(newFiles[0]));
+      }
+
       return [...prev, ...newFiles];
     });
   };
@@ -117,6 +131,11 @@ function PdfExtractor() {
       setTableData(result.table_data || []);
       setExcelUrl(result.excel_url || "");
       // setFiles([]);
+      setDashboard({
+        totalFiles: files.length,
+        totalRows: result.table_data?.length || 0,
+        successFiles: response.results.length
+      });
     }
 
     } catch (err) {
@@ -139,6 +158,8 @@ function PdfExtractor() {
       link.click();
       document.body.removeChild(link);
     };
+
+    
 
   return (
     <div className="pe-app">
@@ -169,8 +190,20 @@ function PdfExtractor() {
                 Selected files ({files.length})
               </div>
               {files.map((file, i) => (
-                <div key={i} className="pe-file-item">
-                  <span className="pe-file-item__name">📄 {file.name}</span>
+                <div className="file-actions">
+                  <span className="pe-file-item__name">
+                    📄 {file.name}
+                  </span>
+                <div className="ButtonPreview">
+                  <button
+                    className="preview-btn"
+                    onClick={() => {
+                      setPreviewUrl(URL.createObjectURL(file));
+                      setShowPreview(true);
+                    }}
+                  >
+                    👁️
+                  </button>
                   <button
                     className="pe-file-item__remove"
                     onClick={() => removeFile(i)}
@@ -179,10 +212,38 @@ function PdfExtractor() {
                   >
                     ✕
                   </button>
+                </div>  
                 </div>
               ))}
             </div>
           )}
+
+          {
+            showPreview && (
+              <div className="preview-modal">
+                <div className="preview-content">
+
+                  <div className="preview-header">
+                    <h3>PDF Preview</h3>
+
+                    <button
+                      className="close-btn"
+                      onClick={() => setShowPreview(false)}
+                    >
+                      ✕
+                    </button>
+                  </div>
+
+                  <iframe
+                    src={previewUrl}
+                    title="PDF Preview"
+                    width="100%"
+                    height="700px"
+                  />
+                </div>
+              </div>
+            )
+          }
 
           {/* Extraction type */}
           <div className="pe-form-group">
@@ -267,6 +328,24 @@ function PdfExtractor() {
 
         {/* RIGHT COLUMN – Only the extracted table (no JSON) */}
         <div className="pe-right">
+          <div className="dashboard-cards">
+
+            <div className="dashboard-card">
+              <h3>{dashboard.totalFiles}</h3>
+              <p>Uploaded Files</p>
+            </div>
+
+            <div className="dashboard-card">
+              <h3>{dashboard.totalRows}</h3>
+              <p>Extracted Rows</p>
+            </div>
+
+            <div className="dashboard-card">
+              <h3>{dashboard.successFiles}</h3>
+              <p>Success Files</p>
+            </div>
+
+          </div>
           {tableData.length > 0 && (
             <div className="table-container">
               <div className="pe-result__header">Extracted Table</div>
