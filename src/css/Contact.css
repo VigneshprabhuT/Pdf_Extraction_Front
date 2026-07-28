@@ -43,6 +43,7 @@
     text-align: center;
     color: #ffffff;
     /* margin-left removed – centering is handled by flex */
+    margin-left: 700px;
 }
 
 .contact-content h1 {
