@@ -65,13 +65,13 @@ const Navbar = () => {
               <h4>Connect</h4>
               <NavLink to="/support" onClick={closeAll}>Get Support</NavLink>
               <NavLink to="/careers" onClick={closeAll}>Careers</NavLink>
-              <NavLink to="/contact" onClick={closeAll}>Contact Us</NavLink>
+              <NavLink to="/contact-us" onClick={closeAll}>Contact Us</NavLink>
             </div>
           </div>
         </div>
 
         <NavLink to="/insights" onClick={closeAll}>Insights</NavLink>
-        <NavLink to="/contact" onClick={closeAll}>Contact</NavLink>
+        <NavLink to="/contact-us" onClick={closeAll}>Contact</NavLink>
       </div>
 
       <button

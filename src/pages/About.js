@@ -293,7 +293,7 @@ const About = () => {
             <ul>
               <li><NavLink to="/about-us">About</NavLink></li>
               <li><a href="/industries">Careers</a></li>
-              <li><a href="/contact">Contact</a></li>
+              <li><a href="/contact-us">Contact</a></li>
             </ul>
           </div>
           <div className="footer-col">
