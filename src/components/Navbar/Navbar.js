@@ -57,7 +57,7 @@ const Navbar = () => {
           <div className={`dropdown-content mega ${aboutOpen ? "show" : ""}`}>
             <div className="dropdown-column">
               <h4>Meet Us</h4>
-              <NavLink to="/about" onClick={closeAll}>About Us</NavLink>
+              <NavLink to="/about-us" onClick={closeAll}>About Us</NavLink>
               <NavLink to="/executive-team" onClick={closeAll}>Executive Team</NavLink>
               <NavLink to="/delivery-model" onClick={closeAll}>Our Delivery Model</NavLink>
             </div>
