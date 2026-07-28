@@ -1,29 +1,15 @@
 import React from "react";
 import { 
-  FaLinkedinIn,
+   FaLinkedinIn,
   FaFacebookF,
   FaEnvelope,
   FaArrowRight,
-  FaBullseye,
-  FaEye,
-  FaHandshake,
-  FaClipboardCheck,
-  FaUsers,
-  FaStar,
-  FaRocket,
  } from "react-icons/fa";
 import logo from "../images/logo.png"; // adjust path to match your project structure
-import Contactus from '../images/Contact.png'
 import "../css/Contact.css";
 import { NavLink } from "react-router-dom";
 
 const Contact = () => {
-    const scrollToSection = (id) => {
-        document.getElementById(id)?.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-        });
-    };
   return (
     <>
     <main className="contact-page">
@@ -108,7 +94,7 @@ const Contact = () => {
             </div>
           </div>
         </section>
-        
+
     </main>
 
     <footer className="site-footer">
