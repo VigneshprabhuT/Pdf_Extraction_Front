@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "../css/Home.css";
 import {
   FaFileLines,
@@ -180,7 +181,7 @@ const Home = () => {
             <div className="footer-col">
               <h4>Company</h4>
               <ul>
-                <li><a href="/why-us">About</a></li>
+                <li><NavLink to="/about-us">About</NavLink></li>
                 <li><a href="/industries">Careers</a></li>
                 <li><a href="/contact">Contact</a></li>
               </ul>

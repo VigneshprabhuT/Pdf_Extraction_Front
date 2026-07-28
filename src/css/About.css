@@ -1,0 +1,666 @@
+/* ====================================
+   About Page – Partners & Clients
+   Complete CSS with centered professional sections
+==================================== */
+
+/* -------- Hero -------- */
+.about-hero {
+    background: #ffffff;
+    padding: 100px 8% 70px;
+    text-align: center;
+    border-bottom: 1px solid #eef2f6;
+}
+
+.about-hero-inner {
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+.eyebrow {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #2563eb;
+    background: rgba(37, 99, 235, .08);
+    padding: 4px 18px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+}
+
+.about-hero h1 {
+    font-family: "Zen Old Mincho", serif;
+    font-size: 3.4rem;
+    line-height: 1.15;
+    color: #0f172a;
+    margin-bottom: 20px;
+}
+
+.hero-lede {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 17px;
+    color: #475569;
+    line-height: 1.8;
+}
+
+/* -------- Partner Index (Jump Navigation) -------- */
+.partner-index {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #eef2f6;
+}
+
+.partner-index button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 22px;
+    background: #ffffff;
+    border: 1px solid #dbe4ef;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "Open Sans", sans-serif;
+    color: #16274e;
+    transition: all 0.3s ease;
+}
+
+.partner-index button:hover {
+    background: #16274e;
+    color: #ffffff;
+    border-color: #16274e;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(22, 39, 78, 0.2);
+}
+
+.partner-index button:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+.partner-index .tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    height: 24px;
+    padding: 0 10px;
+    border-radius: 50px;
+    background: rgba(37, 99, 235, 0.12);
+    color: #2563eb;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.partner-index button:hover .tag {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+/* -------- Partner Section Base -------- */
+.partner-section,
+.partner-Employee,
+.partner-Tpa,
+.partner-rk {
+    padding: 80px 8%;
+    display: grid;
+    align-items: center;
+    background: #ffffff;
+    transition: all 0.3s ease;
+    
+}
+
+/* -------- Advisor Section (two-column) -------- */
+.partner-section {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.partner-section.alt {
+    background: #f8fafc;
+}
+
+/* -------- Employer, TPA, Recordkeeper Sections (centered, professional, with border-radius) -------- */
+
+/* Shared styles for all three */
+.partner-Employee,
+.partner-Tpa,
+.partner-rk {
+    grid-template-columns: 1fr;              /* single centered column */
+    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto;                          /* center the section itself */
+    padding: 70px 10%;
+    /* border-radius: 24px;                  */
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 50px;
+}
+
+/* Hover effect for polish */
+.partner-Employee:hover,
+.partner-Tpa:hover,
+.partner-rk:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.10);
+}
+
+/* Alternate background for .alt class */
+.partner-Employee.alt,
+.partner-rk.alt {
+    background: #f8fafc;
+}
+
+/* TPA gets a slightly different background to distinguish it */
+.partner-Tpa {
+    background: #ffffff;
+}
+
+/* -------- Partner Copy (shared) -------- */
+.partner-copy .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #2563eb;
+    background: rgba(37, 99, 235, .08);
+    padding: 2px 14px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+}
+
+/* For centered sections, ensure tag is centered */
+.partner-Employee .partner-copy .tag,
+.partner-Tpa .partner-copy .tag,
+.partner-rk .partner-copy .tag {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.partner-copy h2 {
+    font-family: "Zen Old Mincho", serif;
+    font-size: 2.4rem;
+    line-height: 1.2;
+    color: #0f172a;
+    margin-bottom: 18px;
+}
+
+.partner-copy p {
+    color: #475569;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 16px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.partner-copy a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color .25s;
+}
+
+.partner-copy a:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+/* -------- Ledger List (checkmark list) -------- */
+.ledger-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 32px;
+    justify-content: center;
+}
+
+.ledger-list li {
+    position: relative;
+    padding-left: 28px;
+    font-weight: 500;
+    color: #0f172a;
+}
+
+.ledger-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #2563eb;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+/* -------- Partner Media (SVG) -------- */
+.partner-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ledger-art {
+    max-width: 340px;
+    width: 100%;
+    height: auto;
+}
+
+/* -------- Footer -------- */
+.site-footer {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 70px 8% 25px;
+    margin-top: 60px;
+}
+
+.footer-shell {
+    max-width: 1300px;
+    margin: auto;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1.2fr;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+/* Footer Brand */
+.footer-brand .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 16px;
+}
+
+.footer-brand .logo-img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.footer-brand .logo-text b {
+    font-size: 22px;
+    display: block;
+    line-height: 1.2;
+}
+
+.footer-brand .logo-text span {
+    font-size: 12px;
+    color: #cbd5e1;
+    letter-spacing: 2px;
+}
+
+.footer-tag {
+    color: #94a3b8;
+    max-width: 360px;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Social Icons */
+.footer-brand .social {
+    display: flex;
+    gap: 14px;
+}
+
+.footer-brand .social a {
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, .08);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    transition: background .3s, transform .3s;
+    text-decoration: none;
+}
+
+.footer-brand .social a:hover {
+    background: #2563eb;
+    transform: translateY(-4px);
+}
+
+.footer-brand .social svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Footer Columns */
+.footer-col h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    color: #ffffff;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col li {
+    margin-bottom: 10px;
+}
+
+.footer-col a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color .25s, padding-left .25s;
+    font-size: 14px;
+}
+
+.footer-col a:hover {
+    color: #ffffff;
+    padding-left: 4px;
+}
+
+/* Newsletter */
+.footer-newsletter p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-bottom: 18px;
+    line-height: 1.6;
+}
+
+.newsletter-form {
+    display: flex;
+    overflow: hidden;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .06);
+}
+
+.newsletter-form input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #ffffff;
+    padding: 14px 18px;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+}
+
+.newsletter-form input::placeholder {
+    color: #94a3b8;
+}
+
+.newsletter-form button {
+    width: 56px;
+    border: none;
+    background: #2563eb;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.newsletter-form button:hover {
+    background: #1d4ed8;
+}
+
+.newsletter-form button svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, .10);
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.footer-bottom span {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.footer-legal a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color .25s;
+}
+
+.footer-legal a:hover {
+    color: #ffffff;
+}
+
+/* ====================================
+   Responsive
+==================================== */
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 70px 5% 50px;
+    }
+
+    .about-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-lede {
+        font-size: 15px;
+    }
+
+    .partner-index {
+        gap: 8px 14px;
+    }
+
+    .partner-index button {
+        font-size: 13px;
+        padding: 8px 16px;
+    }
+
+    .partner-section,
+    .partner-Employee,
+    .partner-Tpa,
+    .partner-rk {
+        padding: 40px 5%;
+        gap: 30px;
+    }
+
+    .partner-Employee,
+    .partner-Tpa,
+    .partner-rk {
+        padding: 40px 6%;
+        margin: 0 12px;
+        border-radius: 16px;
+    }
+
+    .partner-copy h2 {
+        font-size: 1.7rem;
+    }
+
+    .partner-copy p {
+        font-size: 15px;
+    }
+
+    .ledger-art {
+        max-width: 220px;
+    }
+
+    /* ========== FOOTER – Services & Resources in a row ========== */
+    .footer-top {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;          /* two columns */
+        gap: 30px;
+        text-align: center;
+    }
+
+    /* Brand / Company / Newsletter – full width */
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    /* Company column – full width (first .footer-col) */
+    .footer-col:first-of-type {
+        grid-column: 1 / -1;
+    }
+
+    /* Services & Resources – each takes one column (default span 1) */
+    .footer-col:nth-of-type(2),
+    .footer-col:nth-of-type(3) {
+        grid-column: span 1;
+    }
+
+    /* Newsletter – full width (last child) */
+    .footer-newsletter {
+        grid-column: 1 / -1;
+    }
+
+    /* Ensure each child fills its cell */
+    .footer-brand,
+    .footer-col {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .footer-brand .logo {
+        justify-content: center;
+    }
+
+    .footer-tag {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+    }
+
+    .footer-brand .social {
+        justify-content: center;
+    }
+
+    .footer-col h4 {
+        margin-bottom: 14px;
+    }
+
+    .footer-newsletter p {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .newsletter-form {
+        max-width: 400px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .newsletter-form input {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 14px;
+    }
+
+    .footer-legal {
+        justify-content: center;
+        gap: 16px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .about-hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .eyebrow {
+        font-size: 11px;
+        padding: 2px 14px;
+    }
+
+    .partner-index {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .partner-index button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .partner-section,
+    .partner-Employee,
+    .partner-Tpa,
+    .partner-rk {
+        padding: 30px 4%;
+    }
+
+    .partner-Employee,
+    .partner-Tpa,
+    .partner-rk {
+        padding: 30px 5%;
+        margin: 0 8px;
+        border-radius: 14px;
+    }
+
+    .partner-copy h2 {
+        font-size: 1.5rem;
+    }
+
+    .ledger-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .ledger-list li {
+        padding-left: 24px;
+    }
+
+    .footer-brand .logo-text b {
+        font-size: 18px;
+    }
+
+    .footer-brand .logo-text span {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .footer-col a {
+        font-size: 13px;
+    }
+
+    .newsletter-form input {
+        font-size: 13px;
+        padding: 12px 14px;
+    }
+
+    .newsletter-form button {
+        width: 48px;
+    }
+}
