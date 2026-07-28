@@ -14,7 +14,7 @@ import {
  } from "react-icons/fa";
 import logo from "../images/logo.png"; // adjust path to match your project structure
 import Contactus from '../images/Contact.png'
-import "../css/About.css";
+import "../css/Contact.css";
 import { NavLink } from "react-router-dom";
 
 const Contact = () => {
@@ -27,19 +27,88 @@ const Contact = () => {
   return (
     <>
     <main className="contact-page">
-      <div className="About_back">
-           <img src={Contactus} alt="Banner" className="contact-banner" />
+      <div className="contact_back">
+           {/* <img src={Contactus} alt="Banner" className="contact-banner" /> */}
         <div className="contact-content">
-            <h1>Our Partners &amp; Clients</h1>
+            <h1>We're Ready to Help</h1>
 
             <p className="hero-lede">
-            At EGPS, we serve a variety of distinct clients. We work with advisors,
-            employers, CPAs, and attorneys to deliver innovative retirement plan
-            solutions, no matter how complex the scenario. We also partner with
-            other TPAs to bring them the best in actuarial services and consulting.
+              With a growing national presence of experts across the Chennai., we’re ready to support your retirement plan needs. Learn more about how we can help you achieve your goals.
             </p>
         </div>
       </div>    
+
+      {/* ===== Contact Form & Info Section ===== */}
+        <section className="contact-form-section">
+          <div className="contact-form-inner">
+            <div className="contact-info-block">
+              <h2>Get in Touch</h2>
+              <p>
+                Have questions about our retirement plan solutions? Our team of
+                experts is here to help. Fill out the form or reach us directly.
+              </p>
+              <ul className="contact-details-list">
+                <li>
+                  <strong>Phone:</strong> (555) 123‑4567
+                </li>
+                <li>
+                  <strong>Email:</strong> info@egps.com
+                </li>
+                <li>
+                  <strong>Address:</strong> 123 Financial Plaza, Suite 400,
+                  Chennai, India
+                </li>
+              </ul>
+              <div className="office-hours">
+                <h4>Office Hours</h4>
+                <p>Mon – Fri: 9:00 AM – 6:00 PM</p>
+                <p>Sat – Sun: Closed</p>
+              </div>
+            </div>
+
+            <div className="contact-form-wrapper">
+              <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+                <div className="form-group">
+                  <label htmlFor="name">Full Name *</label>
+                  <input type="text" id="name" placeholder="John Doe" required />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="email">Email Address *</label>
+                  <input type="email" id="email" placeholder="john@example.com" required />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="phone">Phone Number</label>
+                  <input type="tel" id="phone" placeholder="+91 98765 43210" />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="message">Message *</label>
+                  <textarea id="message" rows="5" placeholder="Tell us how we can help..." required></textarea>
+                </div>
+                <button type="submit" className="btn-primary">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        {/* ===== Map / Location (optional) ===== */}
+        <section className="contact-map-section alt">
+          <div className="map-inner">
+            <h2>Find Us</h2>
+            <div className="map-container">
+              {/* Replace with your own Google Maps embed or static image */}
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.6078238830227!2d80.24561531537665!3d13.05234019079361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265d6b8d4b2f3%3A0x4a0d5d8e0f5c6d7!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1650000000000"
+                width="100%"
+                height="350"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                title="Office Location"
+              ></iframe>
+            </div>
+          </div>
+        </section>
+        
     </main>
 
     <footer className="site-footer">
