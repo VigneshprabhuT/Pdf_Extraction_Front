@@ -11,6 +11,7 @@ import {
   FaEnvelope,
   FaArrowRight,
 } from "react-icons/fa6";
+import logo from "../images/logo.png";
 
 const services = [
   {
@@ -138,7 +139,9 @@ const Home = () => {
           <div className="footer-top">
             <div className="footer-brand">
               <div className="logo">
-                <div className="logo-mark">EG</div>
+                <div className="logo-mark">
+                  <img src={logo} alt="Company Logo" className="logo-img" />
+                </div>
                 <div className="logo-text">
                   <b>EGPS Ventures</b>
                   <span>RETIREMENT PLAN SOLUTIONS</span>

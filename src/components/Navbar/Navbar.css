@@ -18,17 +18,20 @@
     background: #16274e;
     color: #fff;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 0 40px;
     position: sticky;
     top: 0;
     z-index: 1000;
+    gap: 20px;
 }
 
 .logo-img {
     height: 80px;
+    max-width: 160px;
     object-fit: contain;
+    flex-shrink: 0;
 }
 
 /* ==========================
@@ -41,8 +44,7 @@
     justify-content: center;
     flex: 1;
     gap: 50px;
-    margin: 0 30px;
-    margin-right: 100px;
+    min-width: 0; /* allow flex children to shrink instead of overflowing */
 }
 
 .nav-links a,
@@ -55,7 +57,7 @@
     background: none;
     border: none;
     font-family: inherit;
-    
+    white-space: nowrap;
 }
 
 .nav-links a:hover,
@@ -63,7 +65,9 @@
     color: #38bdf8;
 }
 
-.dropdown-title:focus-visible {
+.dropdown-title:focus-visible,
+.nav-links a:focus-visible,
+.menu-icon:focus-visible {
     outline: 2px solid #38bdf8;
     outline-offset: 2px;
 }
@@ -73,7 +77,7 @@
 ========================== */
 
 .dropdown {
-    position: relative;
+    position: static; /* let the dropdown panel size itself against the navbar, not just this link */
 }
 
 .dropdown-title {
@@ -84,24 +88,25 @@
 
 .dropdown-content {
     position: absolute;
-    top: 80px;
-    left: 0%;
-    right: 0;
-    transform: none;
-    width: 320px;
+    top: 100px; /* sits just under the 100px navbar */
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: min(320px, 92vw);
     background: white;
     overflow: hidden;
     display: none;
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-radius: 8px;
 }
 
-/* Mega menu (About Us) - two columns, shifted toward the right */
+/* Mega menu (About Us) - two columns, capped so it never overflows the viewport */
 .dropdown-content.mega {
-    width: 480px;
-    top: 80px;
-    left: 0%;
-    right: 0;
-    transform: none;
+    width: min(480px, 92vw);
+    top: 100px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
     display: none;
     padding: 25px 30px;
     gap: 40px;
@@ -111,6 +116,7 @@
     display: flex;
     flex-direction: column;
     min-width: 180px;
+    flex: 1;
 }
 
 .dropdown-column h4 {
@@ -155,9 +161,9 @@
     padding-left: 28px;
 }
 
-/* Desktop Hover */
+/* Desktop Hover (large screens) */
 
-@media (min-width: 769px) {
+@media (min-width: 992px) {
     .dropdown:hover .dropdown-content {
         display: block;
     }
@@ -178,20 +184,65 @@
     cursor: pointer;
     background: none;
     border: none;
+    flex-shrink: 0;
+    min-width: 44px;
+    min-height: 44px; /* comfortable touch target */
+}
+
+/* ==========================
+   Small desktop / tablet (this range keeps the desktop
+   hover layout but tightens spacing so the nav links don't
+   wrap or crowd the logo/hamburger)
+========================== */
+
+@media (min-width: 769px) and (max-width: 991px) {
+    .navbar {
+        padding: 0 24px;
+    }
+
+    .logo-img {
+        height: 60px;
+    }
+
+    .nav-links {
+        gap: 24px;
+    }
+
+    .nav-links a,
+    .dropdown-title {
+        font-size: 16px;
+    }
+
+    .dropdown-content.mega {
+        width: min(400px, 92vw);
+        gap: 24px;
+        padding: 20px;
+    }
+
+    .dropdown-column {
+        min-width: 140px;
+    }
 }
 
 /* ==========================
    Mobile
 ========================== */
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
 
     .navbar {
         padding: 0 20px;
+        height: 70px;
+    }
+
+    .logo-img {
+        height: 50px;
     }
 
     .menu-icon {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .nav-links {
@@ -199,12 +250,15 @@
         top: 70px;
         left: -100%;
         width: 100%;
+        max-height: calc(100dvh - 70px);
+        overflow-y: auto;
         background: #0f172a;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        justify-content: flex-start;
         gap: 0;
-        transition: 0.4s;
+        transition: left 0.4s ease;
     }
 
     .nav-links.active {
@@ -216,6 +270,7 @@
         width: 100%;
         padding: 18px 20px;
         border-bottom: 1px solid rgba(255,255,255,0.08);
+        font-size: 17px;
     }
 
     .dropdown {
@@ -242,6 +297,7 @@
 
     .dropdown-column {
         padding: 15px 20px;
+        min-width: 0;
     }
 
     .dropdown-column h4 {
@@ -258,5 +314,26 @@
         background: #334155;
         color: #38bdf8;
         padding-left: 30px;
+    }
+}
+
+/* ==========================
+   Very small phones
+========================== */
+
+@media (max-width: 380px) {
+    .navbar {
+        padding: 0 14px;
+    }
+
+    .logo-img {
+        height: 42px;
+        max-width: 110px;
+    }
+
+    .nav-links a,
+    .dropdown-title {
+        font-size: 15px;
+        padding: 15px 16px;
     }
 }
