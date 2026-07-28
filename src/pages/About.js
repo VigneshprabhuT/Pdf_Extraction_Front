@@ -1,5 +1,17 @@
 import React from "react";
-import { FaLinkedinIn, FaFacebookF, FaEnvelope, FaArrowRight } from "react-icons/fa";
+import { 
+  FaLinkedinIn,
+  FaFacebookF,
+  FaEnvelope,
+  FaArrowRight,
+  FaBullseye,
+  FaEye,
+  FaHandshake,
+  FaClipboardCheck,
+  FaUsers,
+  FaStar,
+  FaRocket,
+ } from "react-icons/fa";
 import logo from "../images/logo.png"; // adjust path to match your project structure
 import "../css/About.css";
 import { NavLink } from "react-router-dom";
@@ -14,19 +26,20 @@ const About = () => {
   return (
     <>
     <main className="about-page">
+      <div className="About_back">
+        <div className="about-content">
+            <h1>Our Partners &amp; Clients</h1>
 
-      {/* ===== Hero ===== */}
-      <section className="about-hero">
-        <div className="about-hero-inner">
-          <span className="eyebrow">Since 1966 &middot; Partner Directory</span>
-          <h1>Our Partners &amp; Clients</h1>
-          <p className="hero-lede">
+            <p className="hero-lede">
             At EGPS, we serve a variety of distinct clients. We work with advisors,
             employers, CPAs, and attorneys to deliver innovative retirement plan
             solutions, no matter how complex the scenario. We also partner with
             other TPAs to bring them the best in actuarial services and consulting.
-          </p>
+            </p>
         </div>
+      </div>
+      {/* ===== Hero ===== */}
+      <section className="about-hero">
 
         <nav className="partner-index">
             <button onClick={() => scrollToSection("advisors")}>
@@ -131,6 +144,104 @@ const About = () => {
           </p>
         </div>
       </section>
+    <div className="Our_full_process">
+      {/* ===== NEW: Our Purpose (Credo, Mission, Vision) ===== */}
+        <section className="purpose-section">
+          <div className="purpose-inner">
+            <span className="eyebrow">Our Purpose</span>
+            <h2>Why We Exist</h2>
+            <div className="purpose-grid">
+              <div className="purpose-card credo">
+                <div className="purpose-icon">
+                  <FaRocket />
+                </div>
+                <h3>Credo</h3>
+                <p>We believe all people deserve the opportunity to build wealth.</p>
+              </div>
+              <div className="purpose-card mission">
+                <div className="purpose-icon">
+                  <FaBullseye />
+                </div>
+                <h3>Mission</h3>
+                <p>
+                  We make it easy for retirement plan professionals and sponsors to
+                  provide wealth building benefits to business owners and their
+                  employees.
+                </p>
+              </div>
+              <div className="purpose-card vision">
+                <div className="purpose-icon">
+                  <FaEye />
+                </div>
+                <h3>Vision</h3>
+                <p>
+                  We want to see more people achieve financial independence, enjoy a
+                  meaningful retirement and leave a legacy for their family.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ===== NEW: Our Values ===== */}
+        <section className="values-section alt">
+          <div className="values-inner">
+            <span className="eyebrow">Our Values</span>
+            <h2>What Guides Us</h2>
+            <div className="values-grid">
+              <div className="value-card">
+                <div className="value-icon">
+                  <FaClipboardCheck />
+                </div>
+                <h3>Precision</h3>
+                <p>We keep accurate records and deliver timely, error‑free services.</p>
+              </div>
+              <div className="value-card">
+                <div className="value-icon">
+                  <FaHandshake />
+                </div>
+                <h3>Efficacy</h3>
+                <p>
+                  We support our clients’ success by ensuring they meet regulatory
+                  requirements, communicate to participants, and guide employees toward
+                  retirement.
+                </p>
+              </div>
+              <div className="value-card">
+                <div className="value-icon">
+                  <FaUsers />
+                </div>
+                <h3>Advocacy</h3>
+                <p>
+                  We are a strong voice for favorable regulatory and legislative
+                  requirements that allow employers to easily offer retirement benefit
+                  plans.
+                </p>
+              </div>
+              <div className="value-card">
+                <div className="value-icon">
+                  <FaHandshake />
+                </div>
+                <h3>Collaboration</h3>
+                <p>
+                  We are a reliable and trusted resource alongside our clients,
+                  partners, and teammates.
+                </p>
+              </div>
+              <div className="value-card">
+                <div className="value-icon">
+                  <FaStar />
+                </div>
+                <h3>Excellence</h3>
+                <p>
+                  We proactively provide professional, high‑touch, personalized care
+                  to all.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+    </div>
 
     </main>
 
