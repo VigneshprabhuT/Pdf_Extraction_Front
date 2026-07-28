@@ -130,7 +130,7 @@ const Home = () => {
               <h3>Ready to build a better plan?</h3>
               <p>Talk to a Retirement Plan Consultant about your organization's goals.</p>
             </div>
-            <a href="#contact" className="btn-primary">Get in Touch</a>
+            <a href="/contact" className="btn-primary">Get in Touch</a>
           </div>
         </div>
 
@@ -177,26 +177,26 @@ const Home = () => {
             <div className="footer-col">
               <h4>Company</h4>
               <ul>
-                <li><a href="#why-us">About</a></li>
-                <li><a href="#industries">Careers</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="/why-us">About</a></li>
+                <li><a href="/industries">Careers</a></li>
+                <li><a href="/contact">Contact</a></li>
               </ul>
             </div>
             <div className="footer-col">
               <h4>Services</h4>
               <ul>
-                <li><a href="#services">Retirement Plan Design</a></li>
-                <li><a href="#services">Compliance</a></li>
-                <li><a href="#services">401(k) Combined</a></li>
-                <li><a href="#services">Advisor Partnership</a></li>
+                <li><a href="/services">Retirement Plan Design</a></li>
+                <li><a href="/services">Compliance</a></li>
+                <li><a href="/services">401(k) Combined</a></li>
+                <li><a href="/services">Advisor Partnership</a></li>
               </ul>
             </div>
             <div className="footer-col">
               <h4>Resources</h4>
               <ul>
-                <li><a href="#insights">Insights</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#testimonials">Case Studies</a></li>
+                <li><a href="/insights">Insights</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li><a href="/testimonials">Case Studies</a></li>
               </ul>
             </div>
 
