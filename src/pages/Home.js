@@ -115,7 +115,9 @@ const Home = () => {
             it easy for employers to provide wealth-building benefits to
             employees.
           </p>
-          <a href="#" className="btn-secondary">Learn more about Blue Ridge</a>
+          <a href="/about" className="btn-secondary">
+            Learn more about Blue Ridge
+          </a>
         </div>
       </section>
 
@@ -148,9 +150,27 @@ const Home = () => {
                 employers since 1966.
               </p>
               <div className="social">
-                <a href="#" aria-label="LinkedIn"><FaLinkedinIn /></a>
-                <a href="#" aria-label="Facebook"><FaFacebookF /></a>
-                <a href="#" aria-label="Email"><FaEnvelope /></a>
+                <a
+                  href="https://www.linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <FaLinkedinIn />
+                </a>
+
+                <a
+                  href="https://www.facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                >
+                  <FaFacebookF />
+                </a>
+
+                <a href="mailto:info@example.com" aria-label="Email">
+                  <FaEnvelope />
+                </a>
               </div>
             </div>
 
@@ -195,9 +215,9 @@ const Home = () => {
           <div className="footer-bottom">
             <span>© 2026 EGPS Ventures. All rights reserved.</span>
             <div className="footer-legal">
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms of Service</a>
-              <a href="#">ADV Disclosures</a>
+              <a href="/privacy">Privacy Policy</a>
+              <a href="/terms">Terms of Service</a>
+              <a href="/adv-disclosures">ADV Disclosures</a>
             </div>
           </div>
         </div>
