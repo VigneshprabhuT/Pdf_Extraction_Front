@@ -22,7 +22,43 @@ body {
 .grid {
     display: grid;
 }
+.home_back {
+    position: relative;  /* Needed for absolute positioning of children */
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 8%;
+    overflow: hidden;    /* Prevents any image overflow */
+}
 
+/* ---- The new <img> tag positioned as a background ---- */
+.home-background-img {
+    position: absolute;
+    inset: 0;            /* Shorthand for top:0; right:0; bottom:0; left:0; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* Ensures the image covers the area like 'background-size: cover' */
+    z-index: 0;          /* Puts it behind everything */
+}
+
+/* ---- Your existing dark overlay (stays the same) ---- */
+.home_back::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(22, 39, 78, 0.55);
+    z-index: 1;          /* Overlay sits ON TOP of the image */
+}
+
+/* ---- Your hero content sits on top of the overlay ---- */
+.hero.section {
+    position: relative;  /* Required for z-index to work */
+    z-index: 2;          /* Sits on top of the overlay */
+    max-width: 900px;
+    text-align: center;
+    color: #fff;
+}
 /* ====================================
    Buttons
 ==================================== */
@@ -68,26 +104,47 @@ body {
 ==================================== */
 
 .hero {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    color: #fff;
     text-align: center;
-    background: #ffffff;
-    padding-top: 130px;
-    padding-bottom: 110px;
+    margin-top: 100px;
 }
 
 .hero h1 {
-    max-width: 900px;
-    margin: 0 auto 24px;
     font-family: "Zen Old Mincho", serif;
-    font-size: 3.6rem;
+    font-size: 3.8rem;
     line-height: 1.2;
-    color: #0f172a;
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
 .hero p {
-    max-width: 640px;
-    margin: 0 auto 40px;
-    color: #64748b;
-    font-size: 17px;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    color: rgba(255,255,255,0.92);
+    max-width: 620px;
+}
+
+.hero .btn-primary {
+    padding: 15px 38px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #2563eb, #38bdf8);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .3s ease;
+    box-shadow: 0 10px 25px rgba(37,99,235,.35);
+}
+
+.hero .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(37,99,235,.45);
 }
 
 /* ====================================
@@ -474,9 +531,31 @@ body {
     .section{
         padding:70px 25px;
     }
+    .home_back {
+        min-height: 400px;
+        padding: 0 20px;
+        justify-content: center;
+        text-align: center;
+        background-position: center;
+    }
+
+    .home_back::before {
+        background: rgba(15, 23, 42, 0.6);
+    } 
 
     .hero h1 {
         font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 25px;
+    }
+
+    .hero .btn-primary {
+        width: 100%;
+        max-width: 240px;
     }
 
     .our-services h2 {
@@ -523,6 +602,32 @@ body {
         gap:20px;
         text-align:center;
     }
+    .footer-cta-inner {
+        flex-direction: column;      /* stacks text and button vertically */
+        text-align: center;          /* centers everything */
+        padding: 40px 28px;
+        gap: 28px;
+        border-radius: 16px;
+    }
+
+    .footer-cta h3 {
+        font-size: 26px;
+        margin-bottom: 8px;
+    }
+
+    .footer-cta p {
+        font-size: 16px;
+        max-width: 100%;             /* allow full width on mobile */
+        margin: 0 auto;
+    }
+
+    .footer-cta .btn-primary {
+        width: auto;                 /* keeps button natural width */
+        min-width: 200px;
+        padding: 14px 36px;
+        font-size: 16px;
+    }
+
 
 }
 

@@ -13,6 +13,7 @@ import {
   FaArrowRight,
 } from "react-icons/fa6";
 import logo from "../images/logo.png";
+import Homeimg from '../images/Home.png'
 
 const services = [
   {
@@ -46,7 +47,10 @@ const Home = () => {
   return (
     <>
       {/* ===== Hero ===== */}
+    <div className="home_back">
+     <img src={Homeimg} alt="Retirement planning hero background" className="home-background-img" />
       <section className="hero section">
+
         <h1>Retirement Plan Solutions, Simplified.</h1>
         <p>
           We help advisors, partners, and employers achieve their goals,
@@ -55,7 +59,7 @@ const Home = () => {
         </p>
         <button className="btn-primary">Our Services</button>
       </section>
-
+    </div>
       {/* ===== Our Services ===== */}
       <section id="services" className="our-services section">
         <h2>Our Services</h2>
@@ -132,7 +136,7 @@ const Home = () => {
               <h3>Ready to build a better plan?</h3>
               <p>Talk to a Retirement Plan Consultant about your organization's goals.</p>
             </div>
-            <a href="/contact" className="btn-primary">Get in Touch</a>
+            <a href="/contact-us" className="btn-primary">Get in Touch</a>
           </div>
         </div>
 
