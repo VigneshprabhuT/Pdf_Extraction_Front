@@ -93,11 +93,12 @@
     right: auto;
     transform: translateX(-50%);
     width: min(320px, 92vw);
-    background: white;
+    background: #16274e;
     overflow: hidden;
     display: none;
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    border-radius: 8px;
+    /* border-radius: 8px; */
+    border: 1px solid white;
 }
 
 /* Mega menu (About Us) - two columns, capped so it never overflows the viewport */
@@ -120,7 +121,7 @@
 }
 
 .dropdown-column h4 {
-    color: #0f172a;
+    color: white;
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -144,7 +145,7 @@
 .dropdown-content a {
     display: block;
     padding: 15px 20px;
-    color: #333;
+    color: white;
     text-decoration: none;
     font-size: 15px;
     border-bottom: 1px solid #eee;
@@ -156,7 +157,7 @@
 }
 
 .dropdown-content a:hover {
-    background: #f4f4f4;
+    /* background: #f4f4f4; */
     color: #2563eb;
     padding-left: 28px;
 }
