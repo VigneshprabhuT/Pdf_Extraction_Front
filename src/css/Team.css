@@ -1,0 +1,494 @@
+/* ============================================================
+   Team.css – Full Styles for the Team Page
+   ============================================================ */
+
+/* ─── Google Fonts ─── */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Zen+Old+Mincho:wght@400;500;600;700&display=swap');
+
+/* ─── Reset & Base ─── */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+    line-height: 1.7;
+}
+
+/* ============================================================
+   HERO SECTION (Team_back)
+   ============================================================ */
+
+.Team_back {
+    position: relative;
+    background-image: url("../images/About.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 8%;
+}
+
+/* Dark overlay */
+.Team_back::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(22, 39, 78, 0.55);
+}
+
+.Team-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    text-align: center;
+    color: #fff;
+}
+
+.Team-content h1 {
+    font-family: "Zen Old Mincho", serif;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+/* ============================================================
+   LEADERSHIP TEAM SECTION
+   ============================================================ */
+
+.leadership-team {
+    padding: 80px 8%;
+    background: #f8fafc;
+}
+
+.leadership-team .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-family: "Zen Old Mincho", serif;
+    font-size: 2.8rem;
+    color: #0f172a;
+    margin-bottom: 60px;
+    line-height: 1.2;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: linear-gradient(135deg, #2563eb, #38bdf8);
+    margin: 16px auto 0;
+    border-radius: 4px;
+}
+
+/* ─── Team Member Card ─── */
+.team-member {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background: #ffffff;
+    padding: 40px 45px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 40px rgba(15, 23, 42, 0.14);
+}
+
+
+.team-member:hover .member-image {
+    transform: scale(1.02);
+}
+
+.member-image img {
+    width: 300px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* ─── Member Info ─── */
+.member-info {
+    flex: 1;
+    margin-left: 50px;
+}
+
+.member-info h3 {
+    font-family: "Zen Old Mincho", serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+}
+
+.designation {
+    display: inline-block;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    color: #2563eb;
+    background: rgba(37, 99, 235, 0.08);
+    padding: 4px 16px;
+    border-radius: 50px;
+    margin-bottom: 16px;
+}
+
+.member-info p {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #475569;
+    margin: 0;
+    max-width: 600px;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.site-footer {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 70px 8% 25px;
+}
+
+.footer-shell {
+    max-width: 1300px;
+    margin: auto;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+/* Footer brand / logo */
+.footer-brand .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.logo-mark img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text b {
+    font-size: 22px;
+}
+
+.logo-text span {
+    font-size: 13px;
+    color: #cbd5e1;
+    letter-spacing: 2px;
+}
+
+.footer-tag {
+    color: #94a3b8;
+    max-width: 330px;
+}
+
+/* Social icons */
+.social {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social a {
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: 0.3s;
+}
+
+.social a:hover {
+    background: #2563eb;
+    transform: translateY(-4px);
+}
+
+.social svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+
+/* Newsletter */
+.footer-newsletter p {
+    color: #94a3b8;
+    margin-bottom: 18px;
+}
+
+.newsletter-form {
+    display: flex;
+    overflow: hidden;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.newsletter-form input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    padding: 15px 18px;
+    font-size: 15px;
+}
+
+.newsletter-form input::placeholder {
+    color: #cbd5e1;
+}
+
+.newsletter-form button {
+    width: 60px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.newsletter-form button:hover {
+    background: #1d4ed8;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* Tablet */
+@media (max-width: 992px) {
+
+    .section-title {
+        font-size: 2.4rem;
+    }
+
+    .team-member {
+        padding: 32px 30px;
+        gap: 35px;
+    }
+
+    .member-image {
+        flex: 0 0 160px;
+        width: 160px;
+        height: 160px;
+    }
+
+    .member-info h3 {
+        font-size: 1.7rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .Team_back {
+        height: 350px;
+        padding: 0 20px;
+    }
+
+    .Team-content h1 {
+        font-size: 2rem;
+    }
+
+    .leadership-team {
+        padding: 50px 20px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .team-member {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        padding: 25px 20px;
+    }
+
+    .member-image img {
+        width: 180px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .member-info {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 15px;
+    }
+    .member-info h3 {
+        font-size: 1.6rem;
+    }
+
+    .designation {
+        font-size: 0.85rem;
+        padding: 3px 14px;
+    }
+
+    .member-info p {
+        max-width: 100%;
+        font-size: 15px;
+    }
+    
+    /* ========== FOOTER – Services & Resources in a row ========== */
+    .footer-top {
+        grid-template-columns: 1fr 1fr;          /* two columns */
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-col:first-of-type {
+        grid-column: 1 / -1;
+    }
+
+    .footer-col:nth-of-type(2),
+    .footer-col:nth-of-type(3) {
+        grid-column: span 1;
+    }
+
+    .footer-newsletter {
+        grid-column: 1 / -1;
+    }
+
+    .footer-brand .logo {
+        justify-content: center;
+    }
+
+    .footer-tag {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+    }
+
+    .footer-brand .social {
+        justify-content: center;
+    }
+
+    .footer-col h4 {
+        margin-bottom: 14px;
+    }
+
+    .footer-newsletter p {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .newsletter-form {
+        max-width: 400px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .newsletter-form input {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 14px;
+    }
+
+    .footer-legal {
+        justify-content: center;
+        gap: 16px;
+    }
+   
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .Team_back {
+        height: 280px;
+    }
+
+    .Team-content h1 {
+        font-size: 1.6rem;
+    }
+
+    .leadership-team {
+        padding: 40px 18px;
+    }
+
+    .section-title {
+        font-size: 1.7rem;
+    }
+
+    .team-member {
+        padding: 24px 18px;
+        gap: 20px;
+    }
+
+    .member-image {
+        flex: 0 0 120px;
+        width: 120px;
+        height: 120px;
+    }
+
+    .member-info h3 {
+        font-size: 1.4rem;
+    }
+
+    .member-info p {
+        font-size: 14px;
+    }
+
+    .footer-top {
+        gap: 30px;
+    }
+
+    .footer-col h4 {
+        font-size: 18px;
+    }
+
+    .newsletter-form input {
+        font-size: 14px;
+        padding: 12px 14px;
+    }
+
+    .newsletter-form button {
+        width: 50px;
+    }
+}
