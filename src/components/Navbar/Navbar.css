@@ -28,9 +28,9 @@
 }
 
 .logo-img {
-    height: 200px;
+    height: 80px;
     max-width: 160px;
-    object-fit: cover;
+    object-fit: contain;
     flex-shrink: 0;
 }
 
