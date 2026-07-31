@@ -28,8 +28,9 @@
 }
 
 .logo-img {
-    height: 80px;
-    max-width: 160px;
+    height: 110px;
+    /* max-width: 160px; */
+    width: 350px;
     object-fit: contain;
     flex-shrink: 0;
 }
@@ -235,7 +236,7 @@
     }
 
     .logo-img {
-        height: 50px;
+        height: 70px;
     }
 
     .menu-icon {

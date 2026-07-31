@@ -6,6 +6,7 @@ import Home from "../pages/Home";
 import About from "../pages/About"
 import Contact from "../pages/Contact";
 import Team from "../pages/Team";
+import PdfExtractor from "../Pdf/PdfExtractor"
 
 const MainRouter = () => {
   const router = createBrowserRouter([
@@ -28,6 +29,10 @@ const MainRouter = () => {
         {
           path: "/executive-team",
           element: <Team />,
+        },
+        {
+          path: "/pdf-extraction",
+          element: <PdfExtractor />,
         },
       ],
     },

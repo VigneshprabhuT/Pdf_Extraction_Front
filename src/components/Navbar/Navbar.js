@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../../images/logo.png";
+import logo from "../../images/FinalLogoo.png";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -73,6 +73,7 @@ const Navbar = () => {
         <NavLink to="/insights" onClick={closeAll}>Insights</NavLink>
         <NavLink to="/contact-us" onClick={closeAll}>Contact</NavLink>
       </div>
+
 
       <button
         type="button"
