@@ -16,7 +16,9 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <img src={logo} alt="Company Logo" className="logo-img" />
+      <NavLink to="/">
+        <img src={logo} alt="Company Logo" className="logo-img" />
+      </NavLink>
 
       <div className={`nav-links ${menuOpen ? "active" : ""}`}>
 
@@ -64,7 +66,7 @@ const Navbar = () => {
             <div className="dropdown-column">
               <h4>Connect</h4>
               <NavLink to="/support" onClick={closeAll}>Get Support</NavLink>
-              <NavLink to="/careers" onClick={closeAll}>Careers</NavLink>
+              <NavLink to="/Careers" onClick={closeAll}>Careers</NavLink>
               <NavLink to="/contact-us" onClick={closeAll}>Contact Us</NavLink>
             </div>
           </div>

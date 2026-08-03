@@ -7,6 +7,7 @@ import About from "../pages/About"
 import Contact from "../pages/Contact";
 import Team from "../pages/Team";
 import PdfExtractor from "../Pdf/PdfExtractor"
+import Career from "../pages/Career";
 
 const MainRouter = () => {
   const router = createBrowserRouter([
@@ -33,6 +34,10 @@ const MainRouter = () => {
         {
           path: "/pdf-extraction",
           element: <PdfExtractor />,
+        },
+        {
+          path: "/Careers",
+          element: <Career />,
         },
       ],
     },

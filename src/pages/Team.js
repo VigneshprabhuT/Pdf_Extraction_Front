@@ -194,7 +194,7 @@ const Team = () => {
               <h4>Company</h4>
               <ul>
                 <li><NavLink to="/about-us">About</NavLink></li>
-                <li><a href="/industries">Careers</a></li>
+                <li><a href="/Careers">Careers</a></li>
                 <li><a href="/contact-us">Contact</a></li>
               </ul>
             </div>
