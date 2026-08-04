@@ -20,8 +20,40 @@ import {
 import logo from "../images/logo.png";
 import "../css/Career.css";
 import { NavLink, Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 const Career = () => {
+
+const employees = [
+  {
+    image: require("../images/Team/Daniel.png"),
+    name: "Irit",
+    designation: "Senior Engineer",
+    location: "Israel",
+    quote:
+      "EGPS gave me the opportunity to grow professionally while working with an amazing team.",
+  },
+  {
+    image: require("../images/Team/Dawn.png"),
+    name: "John",
+    designation: "Plan Administrator",
+    location: "USA",
+    quote:
+      "The work environment is collaborative and everyone supports each other.",
+  },
+  {
+    image: require("../images/Team/Ryan.png"),
+    name: "Sarah",
+    designation: "Compliance Analyst",
+    location: "Canada",
+    quote:
+      "I've learned so much here and continue to grow every day.",
+  },
+];
+
   const openPositions = [
     {
       title: "Retirement Plan Administrator",
@@ -176,6 +208,44 @@ const Career = () => {
           </div>
         </section>
 
+        <section className="employee-slider">
+            <Swiper
+                modules={[Pagination, Autoplay]}
+                pagination={{ clickable: true }}
+                autoplay={{
+                    delay: 5000,
+                    disableOnInteraction: false,
+                }}
+                loop={true}
+            >
+                {employees.map((emp, index) => (
+                    <SwiperSlide key={index}>
+                        <div className="employee-slide">
+                            <div className="employee-left">
+                                <h2>Hear From Our Employees</h2>
+                                <p className="quote">
+                                    "{emp.quote}"
+                                </p>
+                                <hr />
+                                <h3>{emp.name}</h3>
+                                <span>
+                                    {emp.designation}
+                                    <br />
+                                    {emp.location}
+                                </span>
+                            </div>
+                            <div className="employee-right">
+                                <img
+                                    src={emp.image}
+                                    alt={emp.name}
+                                />
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        </section>
+
         {/* Open Positions Section */}
         <section className="career-positions">
           <h2>Open Positions</h2>
@@ -272,7 +342,7 @@ const Career = () => {
               <h4>Company</h4>
               <ul>
                 <li><NavLink to="/about-us">About</NavLink></li>
-                <li><NavLink to="/careers">Careers</NavLink></li>
+                <li><NavLink to="/Careers">Careers</NavLink></li>
                 <li><NavLink to="/contact-us">Contact</NavLink></li>
               </ul>
             </div>

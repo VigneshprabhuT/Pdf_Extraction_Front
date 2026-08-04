@@ -9,10 +9,15 @@ const Navbar = () => {
   const [aboutOpen, setAboutOpen] = useState(false);
 
   const closeAll = () => {
-    setMenuOpen(false);
-    setRetirementOpen(false);
-    setAboutOpen(false);
-  };
+  setMenuOpen(false);
+  setRetirementOpen(false);
+  setAboutOpen(false);
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
 
   return (
     <nav className="navbar">
