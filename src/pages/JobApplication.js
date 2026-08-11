@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { useSearchParams } from "react-router-dom";
-import emailjs from "emailjs-com"; // npm install emailjs-com
+import { useSearchParams, useNavigate } from "react-router-dom"; // ← added useNavigate
+import emailjs from "emailjs-com";
 import "../css/JobApplication.css";
 
 const JobApplication = () => {
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate(); // ← hook for navigation
   const position = searchParams.get("position") || "";
 
   const [formData, setFormData] = useState({
@@ -32,20 +33,16 @@ const JobApplication = () => {
     setIsSubmitting(true);
     setSubmitStatus("");
 
-    // 1. Prepare data for EmailJS
     const templateParams = {
       from_name: formData.name,
       from_email: formData.email,
       phone: formData.phone,
       position: formData.position,
       cover_letter: formData.coverLetter || "No cover letter provided.",
-      // EmailJS can't attach files directly via free tier, so we'll note that.
       resume: formData.resume ? formData.resume.name : "No file attached",
     };
 
     try {
-      // 2. Send via EmailJS
-      // Replace with your own Service ID, Template ID, and Public Key
       const serviceID = "service_xerds5r";
       const templateID = "template_igs2whu";
       const publicKey = "MwgpVKyH2Z7wK3ORZ";
@@ -53,7 +50,8 @@ const JobApplication = () => {
       await emailjs.send(serviceID, templateID, templateParams, publicKey);
 
       setSubmitStatus("success");
-      // Optionally reset form
+
+      // Reset form
       setFormData({
         name: "",
         email: "",
@@ -62,6 +60,12 @@ const JobApplication = () => {
         coverLetter: "",
         resume: null,
       });
+
+      // ⏳ Wait 2 seconds, then navigate to Careers page
+      setTimeout(() => {
+        navigate("/careers"); // adjust the path if your Careers page is different
+      }, 2000);
+
     } catch (error) {
       console.error("Email send error:", error);
       setSubmitStatus("error");
@@ -157,7 +161,7 @@ const JobApplication = () => {
 
           {submitStatus === "success" && (
             <p className="status-message success">
-              ✅ Application sent successfully!
+              ✅ Application sent successfully! Redirecting...
             </p>
           )}
           {submitStatus === "error" && (
