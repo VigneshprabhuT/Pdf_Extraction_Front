@@ -352,7 +352,7 @@ const employees = [
                 <li><NavLink to="/retirement-plan-design">Retirement Plan Design</NavLink></li>
                 <li><NavLink to="/retirement-plan-compliance">Compliance</NavLink></li>
                 <li><NavLink to="/3(16)-fiduciary-services">3(16) Fiduciary Services</NavLink></li>
-                <li><NavLink to="/services">Advisor Partnership</NavLink></li>
+                <li><NavLink to="/advisor-partnership">Advisor Partnership</NavLink></li>
               </ul>
             </div>
             <div className="footer-col">

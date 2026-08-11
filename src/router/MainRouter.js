@@ -11,6 +11,7 @@ import Career from "../pages/Career";
 import RetePlanDesign from "../pages/401k_reteriment/RetePlanDesign";
 import RetePlanComplaince from "../pages/401k_reteriment/RetePlanComplaince";
 import FiduciaryServices from "../pages/401k_reteriment/FiduciaryServices";
+import AdvisorPartnership from "../pages/401k_reteriment/AdvisorPartnership";
 
 const MainRouter = () => {
   const router = createBrowserRouter([
@@ -53,6 +54,10 @@ const MainRouter = () => {
         {
           path: "/3(16)-fiduciary-services",
           element: <FiduciaryServices />,
+        },
+        {
+          path: "/advisor-partnership",
+          element: <AdvisorPartnership />,
         },
       ],
     },

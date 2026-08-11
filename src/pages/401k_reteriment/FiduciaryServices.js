@@ -13,7 +13,7 @@ import {
   FaFileAlt,
 } from 'react-icons/fa';
 import "../../css/FiduciaryServices.css"
-import logo from "../../images/Home.png"
+import logo from "../../images/Team.png"
 
 const FiduciaryServices = () => {
   return (
@@ -174,11 +174,9 @@ const FiduciaryServices = () => {
         {/* Call to Action Section */}
         <section className="call_Fiduciary-section">
           <div className="call-Fiduciary-inner">
-            <h2>HAVE A POTENTIAL PROBLEM? WE GOT YOU.</h2>
+            <h2>Interested in Learning More?</h2>
             <p>
-              Do you have a retirement plan compliance question or a scenario that requires
-              some attention? We’re ready to help! Trust in our expertise to confidently guide
-              you through every compliance hurdle.
+              Contact us for more information on this service!
             </p>
             <a href="/contact-us" className="btn-primary">
               Contact Us
@@ -257,7 +255,7 @@ const FiduciaryServices = () => {
                   <a href="/3(16)-fiduciary-services">3(16) Fiduciary Services</a>
                 </li>
                 <li>
-                  <a href="/services">Advisor Partnership</a>
+                  <a href="/advisor-partnership">Advisor Partnership</a>
                 </li>
               </ul>
             </div>

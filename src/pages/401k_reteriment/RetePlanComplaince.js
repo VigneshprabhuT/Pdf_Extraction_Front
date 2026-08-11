@@ -150,7 +150,7 @@ const RetePlanComplaince = () => {
                 <li><a href="/retirement-plan-design">Retirement Plan Design</a></li>
                 <li><a href="/retirement-plan-compliance">Compliance</a></li>
                 <li><a href="/3(16)-fiduciary-services">3(16) Fiduciary Services</a></li>
-                <li><a href="/services">Advisor Partnership</a></li>
+                <li><a href="/advisor-partnership">Advisor Partnership</a></li>
               </ul>
             </div>
 
