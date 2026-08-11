@@ -1,0 +1,331 @@
+/* ===== Retirement Plan Design Page ===== */
+
+.retirement-page {
+  background: #fafafc;
+}
+
+/* Hero section */
+.retirement-hero {
+  background: linear-gradient(135deg, #0b1e2e 0%, #1a3b5d 100%);
+  padding: 5rem 2rem 4rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.retirement-hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.retirement-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.5px;
+}
+
+/* =========================================================
+   PLAN TYPES SECTION
+   ========================================================= */
+
+.plan-types-section {
+  padding: 90px 0;
+  background: #ffffff;
+}
+
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.plan-types-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: start; /* changed from 'center' to keep both columns at top */
+}
+
+/* Left column – paragraph only */
+.hero-lede {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #526575;
+}
+
+/* Right column – plan list */
+.plan-types-list-wrapper {
+  background: #eef5f9;
+  border-left: 5px solid #12608c;
+  /* border-radius: 12px; */
+  padding: 38px 40px;
+  box-shadow: 0 10px 30px rgba(20, 55, 80, 0.08);
+}
+
+/* Heading inside the right wrapper */
+.plan-types-list-wrapper h4 {
+  margin: 0 0 25px 0;
+  color: #123b5d;
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 650;
+}
+
+/* Two‑column grid for the list items */
+.plan-type-list {
+  display: grid;                 /* uncommented */
+  grid-template-columns: 1fr 1fr; /* two columns */
+  gap: 0.5rem 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.plan-type-list li {
+  position: relative;
+  padding: 10px 0 10px 30px;
+  color: #3e5262;
+  font-size: 17px;
+  border-bottom: 1px solid rgba(18, 96, 140, 0.12);
+}
+
+.plan-type-list li:last-child {
+  border-bottom: none;
+}
+
+.plan-type-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  color: #12608c;
+  font-weight: 700;
+}
+
+/* =========================================================
+   EXPERTISE SECTION
+   ========================================================= */
+
+.expertise-section {
+  padding: 90px 0;
+  background: #f5f8fa;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.expertise-image {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  /* border-radius: 14px; */
+  box-shadow: 0 12px 30px rgba(20, 55, 80, 0.12);
+}
+
+.expertise-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.expertise-content {
+  text-align: left;
+}
+
+.expertise-content h2 {
+  margin: 0 0 25px;
+  color: #123b5d;
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.expertise-content p {
+  margin: 0;
+  color: #596d7c;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   REDESIGN SECTION
+   ========================================================= */
+
+.redesign-section {
+  padding: 90px 0;
+  background: #ffffff;
+}
+
+.redesign-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.redesign-content {
+  text-align: left;
+}
+
+.redesign-content h2 {
+  margin: 0 0 25px;
+  color: #123b5d;
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.redesign-content p {
+  margin: 0 0 22px;
+  color: #596d7c;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.redesign-content p:last-child {
+  margin-bottom: 0;
+}
+
+.redesign-image {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  /* border-radius: 14px; */
+  box-shadow: 0 12px 30px rgba(20, 55, 80, 0.12);
+}
+
+.redesign-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 4rem 2rem;
+  background: #eef3f7;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #0b1e2e;
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+  color: #2d3748;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.cta-section .btn-primary {
+  background: #1a3b5d;
+  color: #fff;
+  padding: 0.9rem 3rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: inline-block;
+  transition: background 0.25s ease;
+  text-decoration: none;
+}
+
+.cta-section .btn-primary:hover {
+  background: #0f2a44;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  /* Hero */
+  .retirement-hero {
+    padding: 3rem 1.5rem;
+  }
+  .retirement-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  /* Plan Types – stack columns */
+  .plan-types-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .plan-types-list-wrapper {
+    padding: 28px 24px;
+  }
+  .plan-types-list-wrapper h4 {
+    font-size: 20px;
+  }
+  .hero-lede {
+    font-size: 16px;
+  }
+
+  /* Keep list two‑column on tablets */
+  .plan-type-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.3rem 1rem;
+  }
+  .plan-type-list li {
+    font-size: 15px;
+    padding: 8px 0 8px 28px;
+  }
+
+  /* Expertise & Redesign – stack vertically, center text */
+  .expertise-grid,
+  .redesign-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  .expertise-content,
+  .redesign-content {
+    text-align: center;
+  }
+  .expertise-content h2,
+  .redesign-content h2 {
+    font-size: 32px;
+  }
+  .expertise-content p,
+  .redesign-content p {
+    font-size: 16px;
+  }
+  .expertise-image,
+  .redesign-image {
+    height: 240px;
+  }
+
+  /* CTA */
+  .cta-section h2 {
+    font-size: 1.8rem;
+  }
+  .cta-section p {
+    font-size: 1rem;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .retirement-hero h1 {
+    font-size: 1.8rem;
+  }
+  .plan-type-list {
+    grid-template-columns: 1fr; /* single column on mobile */
+  }
+  .cta-section h2 {
+    font-size: 1.8rem;
+  }
+  .expertise-image,
+  .redesign-image {
+    height: 180px;
+  }
+}

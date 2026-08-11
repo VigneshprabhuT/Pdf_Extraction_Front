@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../images/FinalLogoo.png";
 import "./Navbar.css";
+import { BiMenuAltLeft } from "react-icons/bi";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -89,7 +90,7 @@ const Navbar = () => {
         aria-expanded={menuOpen}
         onClick={() => setMenuOpen(!menuOpen)}
       >
-        ☰
+       <BiMenuAltLeft />
       </button>
     </nav>
   );

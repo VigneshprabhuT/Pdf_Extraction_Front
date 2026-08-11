@@ -8,6 +8,7 @@ import Contact from "../pages/Contact";
 import Team from "../pages/Team";
 import PdfExtractor from "../Pdf/PdfExtractor"
 import Career from "../pages/Career";
+import RetePlanDesign from "../pages/401k_reteriment/RetePlanDesign";
 
 const MainRouter = () => {
   const router = createBrowserRouter([
@@ -38,6 +39,10 @@ const MainRouter = () => {
         {
           path: "/Careers",
           element: <Career />,
+        },
+        {
+          path: "/retirement-plan-design",
+          element: <RetePlanDesign />,
         },
       ],
     },

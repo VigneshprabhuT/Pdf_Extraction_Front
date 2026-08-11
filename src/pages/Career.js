@@ -349,7 +349,7 @@ const employees = [
             <div className="footer-col">
               <h4>Services</h4>
               <ul>
-                <li><NavLink to="/services">Retirement Plan Design</NavLink></li>
+                <li><NavLink to="/retirement-plan-design">Retirement Plan Design</NavLink></li>
                 <li><NavLink to="/services">Compliance</NavLink></li>
                 <li><NavLink to="/services">401(k) Combined</NavLink></li>
                 <li><NavLink to="/services">Advisor Partnership</NavLink></li>

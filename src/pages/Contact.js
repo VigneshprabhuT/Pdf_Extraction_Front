@@ -131,7 +131,7 @@ const Contact = () => {
             <div className="footer-col">
               <h4>Services</h4>
               <ul>
-                <li><a href="/services">Retirement Plan Design</a></li>
+                <li><a href="/retirement-plan-design">Retirement Plan Design</a></li>
                 <li><a href="/services">Compliance</a></li>
                 <li><a href="/services">401(k) Combined</a></li>
                 <li><a href="/services">Advisor Partnership</a></li>
