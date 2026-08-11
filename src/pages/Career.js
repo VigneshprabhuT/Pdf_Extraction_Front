@@ -262,7 +262,10 @@ const employees = [
                     <span>{job.type}</span>
                   </div>
                 </div>
-                <Link to="/contact-us" className="career-apply-btn">
+                <Link
+                  to={`/careers/apply?position=${encodeURIComponent(job.title)}`}
+                  className="career-apply-btn"
+                >
                   Apply Now <FaArrowRight />
                 </Link>
               </div>

@@ -1,0 +1,208 @@
+    /* ===== Job Application Page ===== */
+
+    .application-page {
+    min-height: 100vh;
+    background: #f5f8fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    }
+
+    .application-container {
+    max-width: 760px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 3rem 3.5rem;
+    box-shadow: 0 20px 60px rgba(20, 55, 80, 0.10);
+    animation: fadeInUp 0.7s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+
+    .application-container h1 {
+    margin: 0 0 0.25rem;
+    color: #0b1e2e;
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    }
+
+    .application-position {
+    font-size: 1.1rem;
+    color: #3e5262;
+    margin-top: 0.25rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 2px solid #eef3f7;
+    }
+
+    .application-position strong {
+    color: #1a3b5d;
+    }
+
+    .form-group {
+    margin-bottom: 1.75rem;
+    }
+
+    .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #0b1e2e;
+    font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1.5px solid #dce4eb;
+    border-radius: 8px;
+    background: #fafafc;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    color: #1a2a3a;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+    outline: none;
+    border-color: #1a3b5d;
+    box-shadow: 0 0 0 4px rgba(26, 59, 93, 0.10);
+    background: #ffffff;
+    }
+
+    .form-group input[readonly] {
+    background: #eef3f7;
+    cursor: not-allowed;
+    color: #3e5262;
+    }
+
+    .form-group small {
+    display: block;
+    margin-top: 0.35rem;
+    color: #7a8a9a;
+    font-size: 0.85rem;
+    }
+
+    .form-group input[type="file"] {
+    padding: 0.6rem 0.8rem;
+    background: #ffffff;
+    border: 1.5px dashed #bcc9d6;
+    cursor: pointer;
+    }
+
+    .form-group input[type="file"]:hover {
+    border-color: #1a3b5d;
+    background: #f5f8fa;
+    }
+
+    .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    }
+
+    .application-submit {
+    display: inline-block;
+    width: 100%;
+    padding: 0.9rem 2rem;
+    background: #1a3b5d;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3px;
+    }
+
+    .application-submit:hover:not(:disabled) {
+    background: #0f2a44;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(26, 59, 93, 0.25);
+    }
+
+    .application-submit:active:not(:disabled) {
+    transform: translateY(0);
+    }
+
+    .application-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    }
+
+    .status-message {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    text-align: center;
+    }
+
+    .status-message.success {
+    background: #e6f7e6;
+    color: #1d7a3d;
+    border: 1px solid #b8e6b8;
+    }
+
+    .status-message.error {
+    background: #fde8e8;
+    color: #b33c3c;
+    border: 1px solid #f5c6c6;
+    }
+
+    /* =========================================================
+    RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 768px) {
+    .application-container {
+        padding: 2rem 1.8rem;
+    }
+    .application-container h1 {
+        font-size: 2rem;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .application-position {
+        font-size: 1rem;
+    }
+    }
+
+    @media (max-width: 480px) {
+    .application-page {
+        padding: 2rem 1rem;
+    }
+    .application-container {
+        padding: 1.5rem 1.2rem;
+        border-radius: 12px;
+    }
+    .application-container h1 {
+        font-size: 1.6rem;
+    }
+    .form-group input,
+    .form-group textarea {
+        padding: 0.65rem 0.8rem;
+        font-size: 0.95rem;
+    }
+    .application-submit {
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+    }
+    }
