@@ -9,6 +9,8 @@ import Team from "../pages/Team";
 import PdfExtractor from "../Pdf/PdfExtractor"
 import Career from "../pages/Career";
 import RetePlanDesign from "../pages/401k_reteriment/RetePlanDesign";
+import RetePlanComplaince from "../pages/401k_reteriment/RetePlanComplaince";
+import FiduciaryServices from "../pages/401k_reteriment/FiduciaryServices";
 
 const MainRouter = () => {
   const router = createBrowserRouter([
@@ -43,6 +45,14 @@ const MainRouter = () => {
         {
           path: "/retirement-plan-design",
           element: <RetePlanDesign />,
+        },
+        {
+          path: "/retirement-plan-compliance",
+          element: <RetePlanComplaince />,
+        },
+        {
+          path: "/3(16)-fiduciary-services",
+          element: <FiduciaryServices />,
         },
       ],
     },

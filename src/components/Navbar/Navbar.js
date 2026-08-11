@@ -44,7 +44,7 @@ const Navbar = () => {
             <div className="dropdown-column">
               <NavLink to="/retirement-plan-design" onClick={closeAll}>Retirement Plan Design</NavLink>
               <NavLink to="/retirement-plan-compliance" onClick={closeAll}>Retirement Plan Compliance</NavLink>
-              <NavLink to="/combined-services" onClick={closeAll}>401(k) Combined Services</NavLink>
+              <NavLink to="/3(16)-fiduciary-services" onClick={closeAll}>3(16) Fiduciary Services</NavLink>
               <NavLink to="/advisor-partnership" onClick={closeAll}>Advisor Partnership</NavLink>
             </div>
           </div>

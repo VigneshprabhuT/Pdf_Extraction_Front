@@ -1,0 +1,465 @@
+/* ===== Fiduciary Services Page ===== */
+
+.Fiduciary-page {
+  background: #fafafc;
+}
+
+/* ---------- Hero ---------- */
+.Fiduciary-hero {
+  background: linear-gradient(135deg, #0b1e2e 0%, #1a3b5d 100%);
+  padding: 5rem 2rem 4rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.Fiduciary-hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.Fiduciary-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.5px;
+}
+
+/* ---------- Shared container ---------- */
+.Fiduciary-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ---------- Introduction section (full‑width text) ---------- */
+.Fiduciary-types-section {
+  padding: 90px 0;
+  background: #f5f8fa;
+}
+.Fiduciary-inner {
+  width: min(1280px, 90%);
+  margin: 0 auto;
+}
+
+.Fiduciary-types-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.Fiduciary-types-list-wrapper {
+  text-align: left;
+}
+
+.Fiduciary-types-list-wrapper h2 {
+  margin: 0 0 20px;
+  color: #123b5d;
+  font-size: 32px;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.Fiduciary-types-list-wrapper p {
+  margin: 0 0 22px;
+  color: #596d7c;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.Fiduciary-services-special {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 2px solid rgba(18, 96, 140, 0.15);
+}
+
+.Fiduciary-services-special h4 {
+  color: #123b5d;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.Fiduciary-type-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.Fiduciary-type-list li {
+  position: relative;
+  padding: 6px 0 6px 30px;
+  color: #3e5262;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.Fiduciary-type-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  color: #12608c;
+  font-weight: 700;
+}
+
+.Fiduciary-types-image {
+  width: 100%;
+  height: 430px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(20, 55, 80, 0.12);
+}
+
+.Fiduciary-types-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.Fiduciary-types-image:hover img {
+  transform: scale(1.03);
+}
+
+/* ---------- REDUCE WORK & RESPONSIBILITY (New Card Section) ---------- */
+.Fiduciary-reduce-section {
+  padding: 90px 0;
+  background: #ffffff;
+}
+
+.Fiduciary-reduce-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.Fiduciary-reduce-header h2 {
+  color: #123b5d;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: -0.3px;
+}
+
+.reduce-subhead {
+  color: #596d7c;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.Fiduciary-reduce-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.reduce-card {
+  background: #fafafc;
+  /* border-radius: 12px; */
+  padding: 32px 28px 28px;
+  box-shadow: 0 4px 16px rgba(20, 55, 80, 0.06);
+  border-top: 4px solid #1a3b5d;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.reduce-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(20, 55, 80, 0.12);
+}
+
+.reduce-card-icon {
+  width: 54px;
+  height: 54px;
+  background: #e8eef4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: #1a3b5d;
+  font-size: 26px;
+}
+
+.reduce-card h3 {
+  color: #123b5d;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+
+.reduce-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reduce-card ul li {
+  position: relative;
+  padding: 5px 0 5px 22px;
+  color: #3e5262;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.reduce-card ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  color: #12608c;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+/* ---------- Compliance Projects – two‑column grid ---------- */
+.Fiduciary-section {
+  padding: 90px 0;
+  background: #f5f8fa;
+}
+
+.Fiduciary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.Fiduciary-image {
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(20, 55, 80, 0.12);
+}
+
+.Fiduciary-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.Fiduciary-content {
+  text-align: left;
+}
+
+.Fiduciary-content h2 {
+  margin: 0 0 25px;
+  color: #123b5d;
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.Fiduciary-content p {
+  margin: 0 0 25px;
+  color: #596d7c;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* ---------- Call to Action ---------- */
+.call_Fiduciary-section {
+  padding: 4rem 2rem;
+  background: #eef3f7;
+  text-align: center;
+}
+
+.call-Fiduciary-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.call_Fiduciary-section h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #0b1e2e;
+  margin-bottom: 1.2rem;
+}
+
+.call_Fiduciary-section p {
+  font-size: 1.2rem;
+  color: #2d3748;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.call_Fiduciary-section .btn-primary {
+  background: #1a3b5d;
+  color: #fff;
+  padding: 0.9rem 3rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: inline-block;
+  transition: background 0.25s ease;
+  text-decoration: none;
+}
+
+.call_Fiduciary-section .btn-primary:hover {
+  background: #0f2a44;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+/* ---- Tablets (≤ 992px) ---- */
+@media (max-width: 992px) {
+  /* Reduce grid – 2 columns on tablet */
+  .Fiduciary-reduce-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .Fiduciary-types-grid,
+  .Fiduciary-grid {
+    gap: 40px;
+  }
+}
+
+/* ---- Small tablets & large phones (≤ 768px) ---- */
+@media (max-width: 768px) {
+  .Fiduciary-hero {
+    padding: 3rem 1.5rem;
+  }
+  .Fiduciary-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  /* Introduction */
+  .Fiduciary-types-section {
+    padding: 60px 0;
+  }
+  .Fiduciary-types-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  .Fiduciary-types-list-wrapper {
+    text-align: center;
+  }
+  .Fiduciary-types-list-wrapper h2 {
+    font-size: 28px;
+  }
+  .Fiduciary-types-list-wrapper p {
+    font-size: 16px;
+  }
+  .Fiduciary-type-list li {
+    text-align: left;
+  }
+  .Fiduciary-types-image {
+    height: 240px;
+  }
+
+  /* Reduce section */
+  .Fiduciary-reduce-section {
+    padding: 60px 0;
+  }
+  .Fiduciary-reduce-header h2 {
+    font-size: 28px;
+  }
+  .reduce-subhead {
+    font-size: 17px;
+  }
+  .Fiduciary-reduce-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .reduce-card {
+    padding: 24px 20px 20px;
+  }
+  .reduce-card h3 {
+    font-size: 18px;
+  }
+  .reduce-card ul li {
+    font-size: 14px;
+  }
+
+  /* Compliance Projects – stack */
+  .Fiduciary-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  .Fiduciary-content {
+    text-align: center;
+  }
+  .Fiduciary-content h2 {
+    font-size: 28px;
+  }
+  .Fiduciary-content p {
+    font-size: 16px;
+  }
+  .Fiduciary-image {
+    height: 240px;
+  }
+
+  /* CTA */
+  .call_Fiduciary-section h2 {
+    font-size: 1.8rem;
+  }
+  .call_Fiduciary-section p {
+    font-size: 1rem;
+  }
+}
+
+/* ---- Mobile (≤ 480px) ---- */
+@media (max-width: 480px) {
+  .Fiduciary-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .Fiduciary-types-list-wrapper h2 {
+    font-size: 24px;
+  }
+  .Fiduciary-types-list-wrapper p {
+    font-size: 15px;
+  }
+
+  .Fiduciary-reduce-header h2 {
+    font-size: 24px;
+  }
+  .Fiduciary-reduce-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .reduce-card {
+    text-align: left;
+  }
+  .reduce-card-icon {
+    margin-left: 0;
+  }
+
+  .Fiduciary-content h2 {
+    font-size: 24px;
+  }
+
+  .Fiduciary-image {
+    height: 180px;
+  }
+
+  .call_Fiduciary-section h2 {
+    font-size: 1.6rem;
+  }
+  .call_Fiduciary-section .btn-primary {
+    padding: 0.7rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* ---- Extra small (≤ 360px) ---- */
+@media (max-width: 360px) {
+  .Fiduciary-inner {
+    padding: 0 1rem;
+  }
+  .Fiduciary-hero {
+    padding: 2rem 1rem;
+  }
+  .Fiduciary-hero h1 {
+    font-size: 1.6rem;
+  }
+}
