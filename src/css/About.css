@@ -1,6 +1,7 @@
 /* ====================================
    About Page – Partners & Clients
    Complete CSS with centered professional sections
+   Fully responsive: 1024px / 768px / 576px / 400px
 ==================================== */
 
 .About_back {
@@ -9,7 +10,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 500px;
+    min-height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,20 +39,15 @@
     line-height: 1.2;
     font-weight: 600;
     margin-bottom: 1.5rem;
+    padding: 20px 0;
 }
 .about-content .hero-lede {
+    max-width: 700px;
+    margin: 0 auto;
     font-family: "Open Sans", sans-serif;
     font-size: 1.15rem;
     line-height: 2rem;
-    color: rgba(255,255,255,0.92);
-}
-
-.hero-lede {
-    max-width: 700px;
-    margin: 0 auto;
-    font-size: 17px;
-    color: #475569;
-    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.92);
 }
 
 /* -------- Partner Index (Jump Navigation) -------- */
@@ -137,18 +133,19 @@
     background: #f8fafc;
 }
 
-/* -------- Employer, TPA, Recordkeeper Sections (centered, professional, with border-radius) -------- */
+/* -------- Employer, TPA, Recordkeeper Sections (centered, professional) -------- */
 .partner-Employee,
 .partner-Tpa,
 .partner-rk {
     grid-template-columns: 1fr;              /* single centered column */
     text-align: center;
     max-width: 1100px;
-    margin: 0 auto;                          /* center the section itself */
+    width: 100%;
+    box-sizing: border-box;
+    margin: 50px auto 0;                     /* center the section itself */
     padding: 70px 10%;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-top: 50px;
 }
 
 .partner-Employee:hover,
@@ -261,7 +258,6 @@
 
 /* ====================================
    Our Full Process – Purpose & Values
-   Using Flexbox
 ==================================== */
 
 .Our_full_process {
@@ -274,18 +270,15 @@
     background: #ffffff;
     padding: 80px 8%;
     text-align: center;
-    
 }
 
 .purpose-inner {
     max-width: 1200px;
     margin: 0 auto;
-    
 }
 
 .purpose-inner .eyebrow {
     margin-bottom: 8px;
-    
 }
 
 .purpose-inner h2 {
@@ -301,19 +294,20 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
-    
 }
 
 .purpose-card {
-    flex: 0 1 calc(33.333% - 40px);   /* 3 columns with gap */
+    flex: 1 1 calc(33.333% - 40px);   /* 3 columns with gap */
     min-width: 260px;                 /* prevents too narrow */
+    max-width: 360px;
+    box-sizing: border-box;
     background: #f8fafc;
     padding: 40px 30px;
     border-radius: 20px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    border: 1px solid black;
+    border: 1px solid #eef2f6;
 }
 
 .purpose-card:hover {
@@ -384,8 +378,10 @@
 }
 
 .value-card {
-    flex: 0 1 calc(33.333% - 30px);   /* 3 columns with gap */
+    flex: 1 1 calc(33.333% - 30px);   /* 3 columns with gap */
     min-width: 240px;
+    max-width: 320px;
+    box-sizing: border-box;
     background: #ffffff;
     padding: 30px 24px;
     border-radius: 16px;
@@ -393,7 +389,6 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
     border: 1px solid #eef2f6;
-    border: 1px solid black;
 }
 
 .value-card:hover {
@@ -412,7 +407,6 @@
     justify-content: center;
     font-size: 24px;
     color: #2563eb;
-    
 }
 
 .value-card h3 {
@@ -558,6 +552,7 @@
 
 .newsletter-form input {
     flex: 1;
+    min-width: 0;
     border: none;
     outline: none;
     background: transparent;
@@ -573,6 +568,7 @@
 
 .newsletter-form button {
     width: 56px;
+    flex-shrink: 0;
     border: none;
     background: #2563eb;
     color: #ffffff;
@@ -626,26 +622,68 @@
 }
 
 /* ====================================
-   Responsive – Corrections & Improvements
+   Responsive – Breakpoint Ladder
+   1024px (small desktop / large tablet)
+   768px  (tablet)
+   576px  (large phone)
+   400px  (small phone)
 ==================================== */
+
+/* ---------- 1024px ---------- */
+@media (max-width: 1024px) {
+    .partner-section {
+        gap: 40px;
+    }
+
+    /* Purpose/Values drop to 2 columns before hitting tablet stack */
+    .purpose-card {
+        flex: 1 1 calc(50% - 40px);
+    }
+
+    .value-card {
+        flex: 1 1 calc(50% - 30px);
+    }
+
+    .footer-top {
+        grid-template-columns: 1.5fr 1fr 1fr;
+        row-gap: 40px;
+    }
+
+    .footer-col:nth-of-type(3) {
+        grid-column: span 1;
+    }
+
+    .footer-newsletter {
+        grid-column: 1 / -1;
+    }
+}
+
+/* ---------- 768px ---------- */
 @media (max-width: 768px) {
+
+    .About_back {
+        min-height: 380px;
+        padding: 50px 5% 40px;
+    }
+    .about-content h1 {
+        font-size: clamp(1.6rem, 5vw, 2.2rem);
+    }
+
+    .about-content .hero-lede {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
     .about-hero {
         padding: 70px 5% 50px;
-    }
-
-    .about-hero h1 {
-        font-size: 2.2rem;
-    }
-
-    .hero-lede {
-        font-size: 15px;
     }
 
     /* ----- Partner Index (stack buttons) ----- */
     .partner-index {
         flex-direction: column;
         align-items: center;
-        gap: 12px;
+        gap: 10px;
+        padding-top: 20px;
     }
 
     .partner-index button {
@@ -664,7 +702,7 @@
         gap: 30px;
     }
 
-    /* Make the two‑column advisor section single column */
+    /* Make the two-column advisor section single column */
     .partner-section {
         grid-template-columns: 1fr;
         text-align: center;
@@ -677,6 +715,7 @@
         padding: 40px 6%;
         margin: 0 12px 40px;  /* add bottom margin for separation */
         border-radius: 16px;
+        max-width: calc(100% - 24px);
     }
 
     .partner-copy h2 {
@@ -708,7 +747,8 @@
     }
 
     .purpose-card {
-        flex: 0 1 100%;          /* full width */
+        flex: 1 1 100%;          /* full width */
+        max-width: 480px;
         min-width: unset;
         padding: 28px 20px;
         border-radius: 16px;
@@ -735,7 +775,8 @@
     }
 
     .value-card {
-        flex: 0 1 100%;          /* full width */
+        flex: 1 1 100%;          /* full width */
+        max-width: 480px;
         min-width: unset;
         padding: 24px 16px;
         border-radius: 14px;
@@ -760,12 +801,12 @@
         min-height: 350px;
         background-size: cover;
         background-position: center;
-        height: auto;            /* allow height to be determined by min-height */
+        height: auto;
     }
 
-    /* ========== FOOTER – Services & Resources in a row ========== */
+    /* ========== FOOTER – two columns ========== */
     .footer-top {
-        grid-template-columns: 1fr 1fr;          /* two columns */
+        grid-template-columns: 1fr 1fr;
         gap: 30px;
         text-align: center;
     }
@@ -817,43 +858,85 @@
         width: 100%;
     }
 
-    .newsletter-form input {
-        flex: 1;
-        min-width: 0;
+    .footer-bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .footer-bottom > span {
+        white-space: nowrap;
+        font-size: 13px;
+    }
+
+    .footer-legal {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .footer-legal a {
+        font-size: 13px;
+        white-space: nowrap;
+    }
+}
+
+/* ---------- 576px: large phones ---------- */
+@media (max-width: 576px) {
+    .about-content h1 {
+        font-size: 1.6rem;
+    }
+
+    .about-content .hero-lede {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .partner-copy h2 {
+        font-size: 1.5rem;
+    }
+
+    .purpose-inner h2,
+    .values-inner h2 {
+        font-size: 1.5rem;
+    }
+
+    /* ----- FOOTER – single column on small phones ----- */
+    .footer-top {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 34px;
+    }
+
+    .footer-brand,
+    .footer-col,
+    .footer-col:first-of-type,
+    .footer-col:nth-of-type(2),
+    .footer-col:nth-of-type(3),
+    .footer-newsletter {
+        grid-column: 1 / -1;
     }
 
     .footer-bottom {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    flex-wrap: nowrap;
-  }
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 14px;
+    }
 
-  .footer-bottom > span {
-    white-space: nowrap;
-    font-size: 13px;
-  }
-
-  .footer-legal {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: nowrap;
-    white-space: nowrap;
-  }
-
-  .footer-legal a {
-    font-size: 13px;
-    white-space: nowrap;
-  }
+    .footer-legal {
+        justify-content: center;
+    }
 }
 
-/* Small Mobile */
-@media (max-width: 480px) {
+/* ---------- 400px: small phones ---------- */
+@media (max-width: 400px) {
     .about-hero h1 {
         font-size: 1.8rem;
     }
@@ -881,10 +964,11 @@
         padding: 30px 5%;
         margin: 0 8px 30px;
         border-radius: 14px;
+        max-width: calc(100% - 16px);
     }
 
     .partner-copy h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     .ledger-list {
@@ -895,6 +979,10 @@
 
     .ledger-list li {
         padding-left: 24px;
+    }
+
+    .ledger-art {
+        max-width: 180px;
     }
 
     .purpose-card {
