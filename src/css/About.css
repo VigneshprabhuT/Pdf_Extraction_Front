@@ -714,7 +714,7 @@
     .partner-rk {
         padding: 40px 6%;
         margin: 0 12px 40px;  /* add bottom margin for separation */
-        border-radius: 16px;
+        /* border-radius: 16px; */
         max-width: calc(100% - 24px);
     }
 
@@ -751,7 +751,7 @@
         max-width: 480px;
         min-width: unset;
         padding: 28px 20px;
-        border-radius: 16px;
+        /* border-radius: 16px; */
     }
 
     .purpose-card h3 {
@@ -779,7 +779,7 @@
         max-width: 480px;
         min-width: unset;
         padding: 24px 16px;
-        border-radius: 14px;
+        /* border-radius: 14px; */
     }
 
     .value-card h3 {
