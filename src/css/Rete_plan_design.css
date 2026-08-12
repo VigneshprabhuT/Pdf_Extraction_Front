@@ -6,22 +6,47 @@
 
 /* Hero section */
 .retirement-hero {
-  background: linear-gradient(135deg, #0b1e2e 0%, #1a3b5d 100%);
-  padding: 5rem 2rem 4rem;
-  text-align: center;
-  color: #ffffff;
+    position: relative;
+    background-image: url("../images/401kimges/PlanDesign.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 8%;
+    text-align: center;
+    color: #ffffff;
+
+    overflow: hidden;
 }
 
-.retirement-hero-content {
-  max-width: 900px;
-  margin: 0 auto;
+/* Dark overlay */
+.retirement-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(22, 39, 78, 0.55);
 }
+
+/* Keep hero content above overlay */
+.retirement-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    width: 100%;
+}
+
 
 .retirement-hero h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.5px;
+  font-family: "Zen Old Mincho", serif;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding: 20px 0;
 }
 
 /* =========================================================

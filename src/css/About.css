@@ -38,6 +38,7 @@
     line-height: 1.2;
     font-weight: 600;
     margin-bottom: 1.5rem;
+    padding: 20px 0;
 }
 .about-content .hero-lede {
     font-family: "Open Sans", sans-serif;
@@ -629,6 +630,20 @@
    Responsive – Corrections & Improvements
 ==================================== */
 @media (max-width: 768px) {
+
+    .About_back {
+        min-height: 380px;
+        padding: 50px 5% 40px;
+    }
+    .about-content h1 {
+        font-size: clamp(1.6rem, 5vw, 2.2rem);
+    }
+    
+    .about-content .hero-lede {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
     .about-hero {
         padding: 70px 5% 50px;
     }
@@ -640,12 +655,12 @@
     .hero-lede {
         font-size: 15px;
     }
-
     /* ----- Partner Index (stack buttons) ----- */
     .partner-index {
         flex-direction: column;
         align-items: center;
-        gap: 12px;
+        gap: 10px;
+        padding-top: 20px;
     }
 
     .partner-index button {
@@ -823,15 +838,33 @@
     }
 
     .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-        gap: 14px;
-    }
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: nowrap;
+  }
 
-    .footer-legal {
-        justify-content: center;
-        gap: 16px;
-    }
+  .footer-bottom > span {
+    white-space: nowrap;
+    font-size: 13px;
+  }
+
+  .footer-legal {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+
+  .footer-legal a {
+    font-size: 13px;
+    white-space: nowrap;
+  }
 }
 
 /* Small Mobile */
