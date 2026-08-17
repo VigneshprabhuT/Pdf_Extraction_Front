@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import logo from "../../images/FinalLogoo.png";
 import "./Navbar.css";
 import { BiMenuAltLeft } from "react-icons/bi";
+import AiBot from "../../Ai/AiBot"
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -92,6 +93,7 @@ const Navbar = () => {
       >
        <BiMenuAltLeft />
       </button>
+      <AiBot/>
     </nav>
   );
 };
