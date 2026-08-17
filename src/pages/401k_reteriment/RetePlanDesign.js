@@ -6,6 +6,8 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 import logo from "../../images/Contact.png";           // adjust path to your logo
+import ReDesign from "../../images/401kimges/planDesignRedesign.png"
+import Expert from "../../images/401kimges/PlanDesignExpert.png"
 import "../../css/Rete_plan_design.css";       // we'll create this CSS file
 import { NavLink } from "react-router-dom";
 
@@ -65,7 +67,7 @@ const Rete_plan_design = () => {
             {/* Left: Image */}
             <div className="expertise-image">
               <img
-                src={logo}
+                src={Expert}
                 alt="Retirement plan expertise"
               />
             </div>
@@ -110,7 +112,7 @@ const Rete_plan_design = () => {
 
             {/* Right: Image */}
             <div className="redesign-image">
-              <img src={logo} alt="Retirement plan redesign"/>
+              <img src={ReDesign} alt="Retirement plan redesign"/>
             </div>
 
           </div>

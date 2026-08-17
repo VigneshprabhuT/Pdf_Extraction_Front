@@ -5,7 +5,8 @@ import {
   FaEnvelope,
   FaArrowRight,
 } from "react-icons/fa";
-import logo from "../../images/Contact.png";          
+import logo from "../../images/AboutEmployee.png";
+import planComplaince from "../../images/401kimges/PlanComplaince.png"          
 import "../../css/Rete_plan_Complaince.css";          
 import { NavLink } from "react-router-dom";
 
@@ -63,7 +64,7 @@ const RetePlanComplaince = () => {
           <div className="complaince-inner complaince-grid">
             {/* Left: Image */}
             <div className="complaince-image">
-              <img src={logo} alt="Retirement plan compliance expertise" />
+              <img src={planComplaince} alt="Retirement plan compliance expertise" />
             </div>
 
             {/* Right: Content */}
