@@ -79,7 +79,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        <NavLink to="/insights" onClick={closeAll}>Insights</NavLink>
+        <NavLink to="/blog" onClick={closeAll}>Blog</NavLink>
         <NavLink to="/contact-us" onClick={closeAll}>Contact</NavLink>
       </div>
 
