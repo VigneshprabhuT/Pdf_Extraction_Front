@@ -14,6 +14,7 @@ import FiduciaryServices from "../pages/401k_reteriment/FiduciaryServices";
 import AdvisorPartnership from "../pages/401k_reteriment/AdvisorPartnership";
 import JobApplication from "../pages/JobApplication";
 import Blog from "../pages/Blog";
+import BlogDetail from "../pages/BlogDetails";
 
 const MainRouter = () => {
   const router = createBrowserRouter([
@@ -68,6 +69,10 @@ const MainRouter = () => {
         {
            path:"/blog",
            element:<Blog/>,
+        },
+        {
+           path:"/blog/:id",
+           element:<BlogDetail/>,
         },
       ],
     },
